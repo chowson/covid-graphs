@@ -1,0 +1,1346 @@
+[
+    {
+      "Name": "Adur",
+      "Population": 64301
+    },
+    {
+      "Name": "Allerdale",
+      "Population": 97761
+    },
+    {
+      "Name": "Amber Valley",
+      "Population": 128147
+    },
+    {
+      "Name": "Arun",
+      "Population": 160758
+    },
+    {
+      "Name": "Ashfield",
+      "Population": 127918
+    },
+    {
+      "Name": "Ashford",
+      "Population": 130032
+    },
+    {
+      "Name": "Babergh",
+      "Population": 92036
+    },
+    {
+      "Name": "Barking and Dagenham",
+      "Population": 212906
+    },
+    {
+      "Name": "Barnet",
+      "Population": 395869
+    },
+    {
+      "Name": "Barnsley",
+      "Population": 246866
+    },
+    {
+      "Name": "Barrow-in-Furness",
+      "Population": 67049
+    },
+    {
+      "Name": "Basildon",
+      "Population": 187199
+    },
+    {
+      "Name": "Basingstoke and Deane",
+      "Population": 176582
+    },
+    {
+      "Name": "Bassetlaw",
+      "Population": 117459
+    },
+    {
+      "Name": "Bath and North East Somerset",
+      "Population": 193282
+    },
+    {
+      "Name": "Bedford",
+      "Population": 173292
+    },
+    {
+      "Name": "Bexley",
+      "Population": 248287
+    },
+    {
+      "Name": "Birmingham",
+      "Population": 1141816
+    },
+    {
+      "Name": "Blaby",
+      "Population": 101526
+    },
+    {
+      "Name": "Blackburn with Darwen",
+      "Population": 149696
+    },
+    {
+      "Name": "Blackpool",
+      "Population": 139446
+    },
+    {
+      "Name": "Blaenau Gwent",
+      "Population": 69862
+    },
+    {
+      "Name": "Bolsover",
+      "Population": 80562
+    },
+    {
+      "Name": "Bolton",
+      "Population": 287550
+    },
+    {
+      "Name": "Boston",
+      "Population": 70173
+    },
+    {
+      "Name": "Bournemouth, Christchurch and Poole",
+      "Population": 395331
+    },
+    {
+      "Name": "Bracknell Forest",
+      "Population": 122549
+    },
+    {
+      "Name": "Bradford",
+      "Population": 539776
+    },
+    {
+      "Name": "Braintree",
+      "Population": 152604
+    },
+    {
+      "Name": "Breckland",
+      "Population": 139968
+    },
+    {
+      "Name": "Brent",
+      "Population": 329771
+    },
+    {
+      "Name": "Brentwood",
+      "Population": 77021
+    },
+    {
+      "Name": "Bridgend",
+      "Population": 147049
+    },
+    {
+      "Name": "Brighton and Hove",
+      "Population": 290885
+    },
+    {
+      "Name": "Bristol, City of",
+      "Population": 463377
+    },
+    {
+      "Name": "Broadland",
+      "Population": 130783
+    },
+    {
+      "Name": "Bromley",
+      "Population": 332336
+    },
+    {
+      "Name": "Bromsgrove",
+      "Population": 99881
+    },
+    {
+      "Name": "Broxbourne",
+      "Population": 97279
+    },
+    {
+      "Name": "Broxtowe",
+      "Population": 114033
+    },
+    {
+      "Name": "Buckinghamshire",
+      "Population": 543973
+    },
+    {
+      "Name": "Burnley",
+      "Population": 88920
+    },
+    {
+      "Name": "Bury",
+      "Population": 190990
+    },
+    {
+      "Name": "Caerphilly",
+      "Population": 181075
+    },
+    {
+      "Name": "Calderdale",
+      "Population": 211455
+    },
+    {
+      "Name": "Cambridge",
+      "Population": 124798
+    },
+    {
+      "Name": "Camden",
+      "Population": 270029
+    },
+    {
+      "Name": "Cannock Chase",
+      "Population": 100762
+    },
+    {
+      "Name": "Canterbury",
+      "Population": 165394
+    },
+    {
+      "Name": "Cardiff",
+      "Population": 366903
+    },
+    {
+      "Name": "Carlisle",
+      "Population": 108678
+    },
+    {
+      "Name": "Carmarthenshire",
+      "Population": 188771
+    },
+    {
+      "Name": "Castle Point",
+      "Population": 90376
+    },
+    {
+      "Name": "Central Bedfordshire",
+      "Population": 288648
+    },
+    {
+      "Name": "Ceredigion",
+      "Population": 72695
+    },
+    {
+      "Name": "Charnwood",
+      "Population": 185851
+    },
+    {
+      "Name": "Chelmsford",
+      "Population": 178388
+    },
+    {
+      "Name": "Cheltenham",
+      "Population": 116306
+    },
+    {
+      "Name": "Cherwell",
+      "Population": 150503
+    },
+    {
+      "Name": "Cheshire East",
+      "Population": 384152
+    },
+    {
+      "Name": "Cheshire West and Chester",
+      "Population": 343071
+    },
+    {
+      "Name": "Chesterfield",
+      "Population": 104900
+    },
+    {
+      "Name": "Chichester",
+      "Population": 121129
+    },
+    {
+      "Name": "Chorley",
+      "Population": 118216
+    },
+    {
+      "Name": "City of London",
+      "Population": 9721
+    },
+    {
+      "Name": "Colchester",
+      "Population": 194706
+    },
+    {
+      "Name": "Conwy",
+      "Population": 117203
+    },
+    {
+      "Name": "Copeland",
+      "Population": 68183
+    },
+    {
+      "Name": "Corby",
+      "Population": 72218
+    },
+    {
+      "Name": "Cornwall",
+      "Population": 569578
+    },
+    {
+      "Name": "Cotswold",
+      "Population": 89862
+    },
+    {
+      "Name": "County Durham",
+      "Population": 530094
+    },
+    {
+      "Name": "Coventry",
+      "Population": 371521
+    },
+    {
+      "Name": "Craven",
+      "Population": 57142
+    },
+    {
+      "Name": "Crawley",
+      "Population": 112409
+    },
+    {
+      "Name": "Croydon",
+      "Population": 386710
+    },
+    {
+      "Name": "Dacorum",
+      "Population": 154763
+    },
+    {
+      "Name": "Darlington",
+      "Population": 106803
+    },
+    {
+      "Name": "Dartford",
+      "Population": 112606
+    },
+    {
+      "Name": "Daventry",
+      "Population": 85950
+    },
+    {
+      "Name": "Denbighshire",
+      "Population": 95696
+    },
+    {
+      "Name": "Derby",
+      "Population": 257302
+    },
+    {
+      "Name": "Derbyshire Dales",
+      "Population": 72325
+    },
+    {
+      "Name": "Doncaster",
+      "Population": 311890
+    },
+    {
+      "Name": "Dorset",
+      "Population": 378508
+    },
+    {
+      "Name": "Dover",
+      "Population": 118131
+    },
+    {
+      "Name": "Dudley",
+      "Population": 321596
+    },
+    {
+      "Name": "Ealing",
+      "Population": 341806
+    },
+    {
+      "Name": "East Cambridgeshire",
+      "Population": 89840
+    },
+    {
+      "Name": "East Devon",
+      "Population": 146284
+    },
+    {
+      "Name": "East Hampshire",
+      "Population": 122308
+    },
+    {
+      "Name": "East Hertfordshire",
+      "Population": 149748
+    },
+    {
+      "Name": "East Lindsey",
+      "Population": 141727
+    },
+    {
+      "Name": "East Northamptonshire",
+      "Population": 94527
+    },
+    {
+      "Name": "East Riding of Yorkshire",
+      "Population": 341173
+    },
+    {
+      "Name": "East Staffordshire",
+      "Population": 119754
+    },
+    {
+      "Name": "East Suffolk",
+      "Population": 249461
+    },
+    {
+      "Name": "Eastbourne",
+      "Population": 103745
+    },
+    {
+      "Name": "Eastleigh",
+      "Population": 133584
+    },
+    {
+      "Name": "Eden",
+      "Population": 53253
+    },
+    {
+      "Name": "Elmbridge",
+      "Population": 136795
+    },
+    {
+      "Name": "Enfield",
+      "Population": 333794
+    },
+    {
+      "Name": "Epping Forest",
+      "Population": 131689
+    },
+    {
+      "Name": "Epsom and Ewell",
+      "Population": 80627
+    },
+    {
+      "Name": "Erewash",
+      "Population": 115371
+    },
+    {
+      "Name": "Exeter",
+      "Population": 131405
+    },
+    {
+      "Name": "Fareham",
+      "Population": 116233
+    },
+    {
+      "Name": "Fenland",
+      "Population": 101850
+    },
+    {
+      "Name": "Flintshire",
+      "Population": 156100
+    },
+    {
+      "Name": "Folkestone and Hythe",
+      "Population": 112996
+    },
+    {
+      "Name": "Forest of Dean",
+      "Population": 86791
+    },
+    {
+      "Name": "Fylde",
+      "Population": 80780
+    },
+    {
+      "Name": "Gateshead",
+      "Population": 202055
+    },
+    {
+      "Name": "Gedling",
+      "Population": 117896
+    },
+    {
+      "Name": "Gloucester",
+      "Population": 129128
+    },
+    {
+      "Name": "Gosport",
+      "Population": 84838
+    },
+    {
+      "Name": "Gravesham",
+      "Population": 106939
+    },
+    {
+      "Name": "Great Yarmouth",
+      "Population": 99336
+    },
+    {
+      "Name": "Greenwich",
+      "Population": 287942
+    },
+    {
+      "Name": "Guildford",
+      "Population": 148998
+    },
+    {
+      "Name": "Gwynedd",
+      "Population": 124560
+    },
+    {
+      "Name": "Hackney",
+      "Population": 281120
+    },
+    {
+      "Name": "Halton",
+      "Population": 129410
+    },
+    {
+      "Name": "Hambleton",
+      "Population": 91594
+    },
+    {
+      "Name": "Hammersmith and Fulham",
+      "Population": 185143
+    },
+    {
+      "Name": "Harborough",
+      "Population": 93807
+    },
+    {
+      "Name": "Haringey",
+      "Population": 268647
+    },
+    {
+      "Name": "Harlow",
+      "Population": 87067
+    },
+    {
+      "Name": "Harrogate",
+      "Population": 160831
+    },
+    {
+      "Name": "Harrow",
+      "Population": 251160
+    },
+    {
+      "Name": "Hart",
+      "Population": 97073
+    },
+    {
+      "Name": "Hartlepool",
+      "Population": 93663
+    },
+    {
+      "Name": "Hastings",
+      "Population": 92661
+    },
+    {
+      "Name": "Havant",
+      "Population": 126220
+    },
+    {
+      "Name": "Havering",
+      "Population": 259552
+    },
+    {
+      "Name": "Herefordshire, County of",
+      "Population": 192801
+    },
+    {
+      "Name": "Hertsmere",
+      "Population": 104919
+    },
+    {
+      "Name": "High Peak",
+      "Population": 92666
+    },
+    {
+      "Name": "Hillingdon",
+      "Population": 306870
+    },
+    {
+      "Name": "Hinckley and Bosworth",
+      "Population": 113136
+    },
+    {
+      "Name": "Horsham",
+      "Population": 143791
+    },
+    {
+      "Name": "Hounslow",
+      "Population": 271523
+    },
+    {
+      "Name": "Huntingdonshire",
+      "Population": 177963
+    },
+    {
+      "Name": "Hyndburn",
+      "Population": 81043
+    },
+    {
+      "Name": "Ipswich",
+      "Population": 136913
+    },
+    {
+      "Name": "Isle of Anglesey",
+      "Population": 70043
+    },
+    {
+      "Name": "Isle of Wight",
+      "Population": 141771
+    },
+    {
+      "Name": "Isles of Scilly",
+      "Population": 2224
+    },
+    {
+      "Name": "Islington",
+      "Population": 242467
+    },
+    {
+      "Name": "Kensington and Chelsea",
+      "Population": 156129
+    },
+    {
+      "Name": "Kettering",
+      "Population": 101776
+    },
+    {
+      "Name": "King's Lynn and West Norfolk",
+      "Population": 151383
+    },
+    {
+      "Name": "Kingston upon Hull, City of",
+      "Population": 259778
+    },
+    {
+      "Name": "Kingston upon Thames",
+      "Population": 177507
+    },
+    {
+      "Name": "Kirklees",
+      "Population": 439787
+    },
+    {
+      "Name": "Knowsley",
+      "Population": 150862
+    },
+    {
+      "Name": "Lambeth",
+      "Population": 326034
+    },
+    {
+      "Name": "Lancaster",
+      "Population": 146038
+    },
+    {
+      "Name": "Leeds",
+      "Population": 793139
+    },
+    {
+      "Name": "Leicester",
+      "Population": 354224
+    },
+    {
+      "Name": "Lewes",
+      "Population": 103268
+    },
+    {
+      "Name": "Lewisham",
+      "Population": 305842
+    },
+    {
+      "Name": "Lichfield",
+      "Population": 104756
+    },
+    {
+      "Name": "Lincoln",
+      "Population": 99299
+    },
+    {
+      "Name": "Liverpool",
+      "Population": 498042
+    },
+    {
+      "Name": "Luton",
+      "Population": 213052
+    },
+    {
+      "Name": "Maidstone",
+      "Population": 171826
+    },
+    {
+      "Name": "Maldon",
+      "Population": 64926
+    },
+    {
+      "Name": "Malvern Hills",
+      "Population": 78698
+    },
+    {
+      "Name": "Manchester",
+      "Population": 552858
+    },
+    {
+      "Name": "Mansfield",
+      "Population": 109313
+    },
+    {
+      "Name": "Medway",
+      "Population": 278556
+    },
+    {
+      "Name": "Melton",
+      "Population": 51209
+    },
+    {
+      "Name": "Mendip",
+      "Population": 115587
+    },
+    {
+      "Name": "Merthyr Tydfil",
+      "Population": 60326
+    },
+    {
+      "Name": "Merton",
+      "Population": 206548
+    },
+    {
+      "Name": "Mid Devon",
+      "Population": 82311
+    },
+    {
+      "Name": "Mid Suffolk",
+      "Population": 103895
+    },
+    {
+      "Name": "Mid Sussex",
+      "Population": 151022
+    },
+    {
+      "Name": "Middlesbrough",
+      "Population": 140980
+    },
+    {
+      "Name": "Milton Keynes",
+      "Population": 269457
+    },
+    {
+      "Name": "Mole Valley",
+      "Population": 87245
+    },
+    {
+      "Name": "Monmouthshire",
+      "Population": 94590
+    },
+    {
+      "Name": "Neath Port Talbot",
+      "Population": 143315
+    },
+    {
+      "Name": "New Forest",
+      "Population": 180086
+    },
+    {
+      "Name": "Newark and Sherwood",
+      "Population": 122421
+    },
+    {
+      "Name": "Newcastle upon Tyne",
+      "Population": 302820
+    },
+    {
+      "Name": "Newcastle-under-Lyme",
+      "Population": 129441
+    },
+    {
+      "Name": "Newham",
+      "Population": 353134
+    },
+    {
+      "Name": "Newport",
+      "Population": 154676
+    },
+    {
+      "Name": "North Devon",
+      "Population": 97145
+    },
+    {
+      "Name": "North East Derbyshire",
+      "Population": 101462
+    },
+    {
+      "Name": "North East Lincolnshire",
+      "Population": 159563
+    },
+    {
+      "Name": "North Hertfordshire",
+      "Population": 133570
+    },
+    {
+      "Name": "North Kesteven",
+      "Population": 116915
+    },
+    {
+      "Name": "North Lincolnshire",
+      "Population": 172292
+    },
+    {
+      "Name": "North Norfolk",
+      "Population": 104837
+    },
+    {
+      "Name": "North Somerset",
+      "Population": 215052
+    },
+    {
+      "Name": "North Tyneside",
+      "Population": 207913
+    },
+    {
+      "Name": "North Warwickshire",
+      "Population": 65264
+    },
+    {
+      "Name": "North West Leicestershire",
+      "Population": 103611
+    },
+    {
+      "Name": "Northampton",
+      "Population": 224610
+    },
+    {
+      "Name": "Northumberland",
+      "Population": 322434
+    },
+    {
+      "Name": "Norwich",
+      "Population": 140573
+    },
+    {
+      "Name": "Nottingham",
+      "Population": 332900
+    },
+    {
+      "Name": "Nuneaton and Bedworth",
+      "Population": 129883
+    },
+    {
+      "Name": "Oadby and Wigston",
+      "Population": 57015
+    },
+    {
+      "Name": "Oldham",
+      "Population": 237110
+    },
+    {
+      "Name": "Oxford",
+      "Population": 152457
+    },
+    {
+      "Name": "Pembrokeshire",
+      "Population": 125818
+    },
+    {
+      "Name": "Pendle",
+      "Population": 92112
+    },
+    {
+      "Name": "Peterborough",
+      "Population": 202259
+    },
+    {
+      "Name": "Plymouth",
+      "Population": 262100
+    },
+    {
+      "Name": "Portsmouth",
+      "Population": 214905
+    },
+    {
+      "Name": "Powys",
+      "Population": 132435
+    },
+    {
+      "Name": "Preston",
+      "Population": 143135
+    },
+    {
+      "Name": "Reading",
+      "Population": 161780
+    },
+    {
+      "Name": "Redbridge",
+      "Population": 305222
+    },
+    {
+      "Name": "Redcar and Cleveland",
+      "Population": 137150
+    },
+    {
+      "Name": "Redditch",
+      "Population": 85261
+    },
+    {
+      "Name": "Reigate and Banstead",
+      "Population": 148748
+    },
+    {
+      "Name": "Rhondda Cynon Taf",
+      "Population": 241264
+    },
+    {
+      "Name": "Ribble Valley",
+      "Population": 60888
+    },
+    {
+      "Name": "Richmond upon Thames",
+      "Population": 198019
+    },
+    {
+      "Name": "Richmondshire",
+      "Population": 53730
+    },
+    {
+      "Name": "Rochdale",
+      "Population": 222412
+    },
+    {
+      "Name": "Rochford",
+      "Population": 87368
+    },
+    {
+      "Name": "Rossendale",
+      "Population": 71482
+    },
+    {
+      "Name": "Rother",
+      "Population": 96080
+    },
+    {
+      "Name": "Rotherham",
+      "Population": 265411
+    },
+    {
+      "Name": "Rugby",
+      "Population": 108935
+    },
+    {
+      "Name": "Runnymede",
+      "Population": 89424
+    },
+    {
+      "Name": "Rushcliffe",
+      "Population": 119184
+    },
+    {
+      "Name": "Rushmoor",
+      "Population": 94599
+    },
+    {
+      "Name": "Rutland",
+      "Population": 39927
+    },
+    {
+      "Name": "Ryedale",
+      "Population": 55380
+    },
+    {
+      "Name": "Salford",
+      "Population": 258834
+    },
+    {
+      "Name": "Sandwell",
+      "Population": 328450
+    },
+    {
+      "Name": "Scarborough",
+      "Population": 108757
+    },
+    {
+      "Name": "Sedgemoor",
+      "Population": 123178
+    },
+    {
+      "Name": "Sefton",
+      "Population": 276410
+    },
+    {
+      "Name": "Selby",
+      "Population": 90620
+    },
+    {
+      "Name": "Sevenoaks",
+      "Population": 120750
+    },
+    {
+      "Name": "Sheffield",
+      "Population": 584853
+    },
+    {
+      "Name": "Shropshire",
+      "Population": 323136
+    },
+    {
+      "Name": "Slough",
+      "Population": 149539
+    },
+    {
+      "Name": "Solihull",
+      "Population": 216374
+    },
+    {
+      "Name": "Somerset West and Taunton",
+      "Population": 155115
+    },
+    {
+      "Name": "South Cambridgeshire",
+      "Population": 159086
+    },
+    {
+      "Name": "South Derbyshire",
+      "Population": 107261
+    },
+    {
+      "Name": "South Gloucestershire",
+      "Population": 285093
+    },
+    {
+      "Name": "South Hams",
+      "Population": 87004
+    },
+    {
+      "Name": "South Holland",
+      "Population": 95019
+    },
+    {
+      "Name": "South Kesteven",
+      "Population": 142424
+    },
+    {
+      "Name": "South Lakeland",
+      "Population": 105088
+    },
+    {
+      "Name": "South Norfolk",
+      "Population": 140880
+    },
+    {
+      "Name": "South Northamptonshire",
+      "Population": 94490
+    },
+    {
+      "Name": "South Oxfordshire",
+      "Population": 142057
+    },
+    {
+      "Name": "South Ribble",
+      "Population": 110788
+    },
+    {
+      "Name": "South Somerset",
+      "Population": 168345
+    },
+    {
+      "Name": "South Staffordshire",
+      "Population": 112436
+    },
+    {
+      "Name": "South Tyneside",
+      "Population": 150976
+    },
+    {
+      "Name": "Southampton",
+      "Population": 252520
+    },
+    {
+      "Name": "Southend-on-Sea",
+      "Population": 183125
+    },
+    {
+      "Name": "Southwark",
+      "Population": 318830
+    },
+    {
+      "Name": "Spelthorne",
+      "Population": 99844
+    },
+    {
+      "Name": "St Albans",
+      "Population": 148452
+    },
+    {
+      "Name": "St. Helens",
+      "Population": 180585
+    },
+    {
+      "Name": "Stafford",
+      "Population": 137280
+    },
+    {
+      "Name": "Staffordshire Moorlands",
+      "Population": 98435
+    },
+    {
+      "Name": "Stevenage",
+      "Population": 87845
+    },
+    {
+      "Name": "Stockport",
+      "Population": 293423
+    },
+    {
+      "Name": "Stockton-on-Tees",
+      "Population": 197348
+    },
+    {
+      "Name": "Stoke-on-Trent",
+      "Population": 256375
+    },
+    {
+      "Name": "Stratford-on-Avon",
+      "Population": 130098
+    },
+    {
+      "Name": "Stroud",
+      "Population": 119964
+    },
+    {
+      "Name": "Sunderland",
+      "Population": 277705
+    },
+    {
+      "Name": "Surrey Heath",
+      "Population": 89305
+    },
+    {
+      "Name": "Sutton",
+      "Population": 206349
+    },
+    {
+      "Name": "Swale",
+      "Population": 150082
+    },
+    {
+      "Name": "Swansea",
+      "Population": 246993
+    },
+    {
+      "Name": "Swindon",
+      "Population": 222193
+    },
+    {
+      "Name": "Tameside",
+      "Population": 226493
+    },
+    {
+      "Name": "Tamworth",
+      "Population": 76696
+    },
+    {
+      "Name": "Tandridge",
+      "Population": 88129
+    },
+    {
+      "Name": "Teignbridge",
+      "Population": 134163
+    },
+    {
+      "Name": "Telford and Wrekin",
+      "Population": 179854
+    },
+    {
+      "Name": "Tendring",
+      "Population": 146561
+    },
+    {
+      "Name": "Test Valley",
+      "Population": 126160
+    },
+    {
+      "Name": "Tewkesbury",
+      "Population": 95019
+    },
+    {
+      "Name": "Thanet",
+      "Population": 141922
+    },
+    {
+      "Name": "Three Rivers",
+      "Population": 93323
+    },
+    {
+      "Name": "Thurrock",
+      "Population": 174341
+    },
+    {
+      "Name": "Tonbridge and Malling",
+      "Population": 132153
+    },
+    {
+      "Name": "Torbay",
+      "Population": 136264
+    },
+    {
+      "Name": "Torfaen",
+      "Population": 93961
+    },
+    {
+      "Name": "Torridge",
+      "Population": 68267
+    },
+    {
+      "Name": "Tower Hamlets",
+      "Population": 324745
+    },
+    {
+      "Name": "Trafford",
+      "Population": 237354
+    },
+    {
+      "Name": "Tunbridge Wells",
+      "Population": 118724
+    },
+    {
+      "Name": "Uttlesford",
+      "Population": 91284
+    },
+    {
+      "Name": "Vale of Glamorgan",
+      "Population": 133587
+    },
+    {
+      "Name": "Vale of White Horse",
+      "Population": 136007
+    },
+    {
+      "Name": "Wakefield",
+      "Population": 348312
+    },
+    {
+      "Name": "Walsall",
+      "Population": 285478
+    },
+    {
+      "Name": "Waltham Forest",
+      "Population": 276983
+    },
+    {
+      "Name": "Wandsworth",
+      "Population": 329677
+    },
+    {
+      "Name": "Warrington",
+      "Population": 210014
+    },
+    {
+      "Name": "Warwick",
+      "Population": 143753
+    },
+    {
+      "Name": "Watford",
+      "Population": 96577
+    },
+    {
+      "Name": "Waverley",
+      "Population": 126328
+    },
+    {
+      "Name": "Wealden",
+      "Population": 161475
+    },
+    {
+      "Name": "Wellingborough",
+      "Population": 79707
+    },
+    {
+      "Name": "Welwyn Hatfield",
+      "Population": 123043
+    },
+    {
+      "Name": "West Berkshire",
+      "Population": 158450
+    },
+    {
+      "Name": "West Devon",
+      "Population": 55796
+    },
+    {
+      "Name": "West Lancashire",
+      "Population": 114306
+    },
+    {
+      "Name": "West Lindsey",
+      "Population": 95667
+    },
+    {
+      "Name": "West Oxfordshire",
+      "Population": 110643
+    },
+    {
+      "Name": "West Suffolk",
+      "Population": 179045
+    },
+    {
+      "Name": "Westminster",
+      "Population": 261317
+    },
+    {
+      "Name": "Wigan",
+      "Population": 328662
+    },
+    {
+      "Name": "Wiltshire",
+      "Population": 500024
+    },
+    {
+      "Name": "Winchester",
+      "Population": 124859
+    },
+    {
+      "Name": "Windsor and Maidenhead",
+      "Population": 151422
+    },
+    {
+      "Name": "Wirral",
+      "Population": 324011
+    },
+    {
+      "Name": "Woking",
+      "Population": 100793
+    },
+    {
+      "Name": "Wokingham",
+      "Population": 171119
+    },
+    {
+      "Name": "Wolverhampton",
+      "Population": 263357
+    },
+    {
+      "Name": "Worcester",
+      "Population": 101222
+    },
+    {
+      "Name": "Worthing",
+      "Population": 110570
+    },
+    {
+      "Name": "Wrexham",
+      "Population": 135957
+    },
+    {
+      "Name": "Wychavon",
+      "Population": 129433
+    },
+    {
+      "Name": "Wyre",
+      "Population": 112091
+    },
+    {
+      "Name": "Wyre Forest",
+      "Population": 101291
+    },
+    {
+      "Name": "York",
+      "Population": 210618
+    }
+]

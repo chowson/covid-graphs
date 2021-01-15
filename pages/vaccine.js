@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import Header from '../components/header';
-import DailyCases from '../components/dailyCases';
-import CasesBySpecimenDate from '../components/casesBySpecimenDate';
-import styles from '../styles/Home.module.css'
+import VaccinesToday from '../components/vaccinesToday';
+import DailyVaccines from '../components/dailyVaccines';
+import CumulativeVaccines from '../components/cumulativeVaccines';
 import useLocalStorage from '../hooks/useLocalStorage';
 
-export default function Home() {
+export default function Vaccine() {
   const [favouriteAreas, setFavouriteAreas] = useLocalStorage('favouriteAreas', []);
 
   return (
@@ -20,9 +20,11 @@ export default function Home() {
       <Header />
 
       <main className="container mx-auto">
-        <DailyCases />
+        <VaccinesToday />
 
-        <CasesBySpecimenDate />
+        <DailyVaccines />
+
+        <CumulativeVaccines />
       </main>
     </div>
   )
