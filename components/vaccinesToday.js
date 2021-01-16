@@ -32,7 +32,7 @@ function VaccinesToday() {
                     {secondDose && secondDose.data && 
                         <li className="text-white bg-cyan-900 bg-opacity-90 p-4 rounded-3xl shadow-lg text-center md:text-left mr-4 w-1/2">
                             <span className="font-bold text-sm">Second Dose</span><br />
-                            <span className="text-2xl"><CountUpComponent number={secondDose.data.data[0].value} delay="2500" /></span>
+                            <span className="text-2xl"><CountUpComponent number={secondDose.data.data[0].value} delay="1000" /></span>
                         </li> }
                 </ul>
             </div>
