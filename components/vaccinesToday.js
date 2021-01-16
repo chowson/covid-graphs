@@ -25,14 +25,14 @@ function VaccinesToday() {
                 </div>
                 <ul className="flex my-4 w-full md:w-1/2">
                     {firstDose && firstDose.data && 
-                        <li className="bg-cyan-900 bg-opacity-50 p-4 rounded-xl shadow-lg text-center md:text-left mr-4 w-1/2">
+                        <li className="text-white bg-cyan-900 bg-opacity-90 p-4 rounded-3xl shadow-lg text-center md:text-left mr-4 w-1/2">
                             <span className="font-bold text-sm">First Dose</span><br />
-                            <span className="text-2xl"><CountUpComponent number={firstDose.data.data[0].value} /></span>
+                            <span className="text-2xl"><CountUpComponent number={firstDose.data.data[0].value} delay="0" /></span>
                         </li> }
                     {secondDose && secondDose.data && 
-                        <li className="bg-cyan-900 bg-opacity-50 p-4 rounded-xl shadow-lg text-center md:text-left mr-4 w-1/2">
+                        <li className="text-white bg-cyan-900 bg-opacity-90 p-4 rounded-3xl shadow-lg text-center md:text-left mr-4 w-1/2">
                             <span className="font-bold text-sm">Second Dose</span><br />
-                            <span className="text-2xl"><CountUpComponent number={secondDose.data.data[0].value} /></span>
+                            <span className="text-2xl"><CountUpComponent number={secondDose.data.data[0].value} delay="2500" /></span>
                         </li> }
                 </ul>
             </div>

@@ -3,10 +3,7 @@ import Head from 'next/head'
 import Header from '../components/header';
 import DailyCases from '../components/dailyCases';
 import CasesBySpecimenDate from '../components/casesBySpecimenDate';
-import styles from '../styles/Home.module.css'
-import useLocalStorage from '../hooks/useLocalStorage';
 import AreaSelector from '../components/areaSelector';
-import { GetFavouriteAreas } from '../utilities/userAreas';
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -33,7 +30,7 @@ export default class Home extends React.Component {
     return (
       <div>
         <Head>
-          <title>COVID-19 Graphs</title>
+          <title>Cases | COVID-19 Graphs</title>
           <link rel="icon" href="/favicon.ico" />
           <link rel="preconnect" href="https://api.coronavirus.data.gov.uk" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -42,7 +39,7 @@ export default class Home extends React.Component {
 
         <Header />
 
-        <main className="container mx-auto">
+        <main className="container mx-auto text-primary">
           <AreaSelector onAreaChange={this.localStorageUpdated.bind(this)} />
 
           <DailyCases key={`dailyCases_${this.areaKey()}`} />

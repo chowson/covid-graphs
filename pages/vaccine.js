@@ -11,7 +11,7 @@ export default function Vaccine() {
   return (
     <div>
       <Head>
-        <title>COVID-19 Graphs</title>
+        <title>Vaccine | COVID-19 Graphs</title>
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://api.coronavirus.data.gov.uk" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />

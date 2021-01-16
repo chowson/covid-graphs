@@ -4,6 +4,7 @@
 
 body {
   font-family: 'Jost', sans-serif;
+  @apply text-primary;
 }
 
 a:hover {

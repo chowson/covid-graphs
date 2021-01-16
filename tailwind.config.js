@@ -12,6 +12,10 @@ module.exports = {
       ...theme('colors'),
       cyan: colors.cyan
     }),
+    textColor: theme => ({
+      ...theme('colors'),
+      primary: '#444',
+    }),
     container: {
       padding: {
         DEFAULT: '0.5rem',
