@@ -31,7 +31,7 @@ function DailyVaccines() {
     }
     
     return (
-        <div>
+        <div className="separator">
             { data && data.data && 
                 <div>
                     <StocksChart

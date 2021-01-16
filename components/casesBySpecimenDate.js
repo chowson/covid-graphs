@@ -3,6 +3,7 @@ import { GetCases } from '../utilities/apiFetcher';
 import { GetFavouriteAreas } from '../utilities/userAreas';
 import graphColours from '../utilities/graphColours';
 import StocksChart from '../components/stocksChart';
+import CasesData from '../components/casesData';
 
 class CasesBySpecimenDate extends React.Component {
     constructor(props) {
@@ -11,13 +12,15 @@ class CasesBySpecimenDate extends React.Component {
         this.state = { 
             loaded: false,
             averageSeries: [],
-            series: []
+            series: [],
+            areas: []
         };
     }
 
     componentDidMount() {
         const favouriteAreas = GetFavouriteAreas();
         const casesBySpecimenDateData = GetCases(favouriteAreas);
+        this.state.areas = favouriteAreas;
 
         const PerHundredThousand = (cases, population) => {
             return parseFloat((cases / (population / 100000)).toFixed(1));
@@ -82,8 +85,18 @@ class CasesBySpecimenDate extends React.Component {
     render() {
         return (this.state.loaded &&
             <div>
-                <StocksChart title="Cases by Specimen Date (per 100,000)" series={this.state.series} />
-                <StocksChart title="Cases by Specimen Date" series={this.state.averageSeries} />
+                <div className="separator">
+                    <StocksChart title="Cases by Specimen Date (per 100,000)" series={this.state.averageSeries} />
+                </div>
+                <div className="separator">
+                    <StocksChart title="Cases by Specimen Date" series={this.state.series} />
+                </div>
+
+                <CasesData
+                    series={this.state.series}
+                    averageSeries={this.state.averageSeries}
+                    areas={this.state.areas}
+                />
             </div>
         );
     }

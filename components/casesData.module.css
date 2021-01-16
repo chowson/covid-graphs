@@ -1,0 +1,35 @@
+.table-container {
+    max-height: 50vh;
+    overflow: scroll;
+    display: inline-block;
+    @apply max-w-full mb-12 mt-4;
+}
+
+table.data-table {
+    border-spacing: 0;
+    height: 25vh;
+    overflow-y: scroll;
+    @apply text-xs;
+}
+
+table.data-table th {
+    position: sticky;
+    top: 0;
+    font-weight: bold;
+    @apply bg-gray-200;
+}
+
+table.data-table td, table.data-table th {
+    padding: 0.5rem 0.5rem;
+    text-align: center;
+    border-bottom: 1px solid #C8C8C8;
+}
+
+table.data-table tr:nth-child(even) {
+    @apply bg-blue-900 bg-opacity-10;
+}
+
+table.data-table td:first-child,
+table.data-table th:first-child {
+    text-align: left;
+}

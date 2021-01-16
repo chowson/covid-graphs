@@ -19,6 +19,10 @@ class DailyCases extends React.Component {
         const favouriteAreas = GetFavouriteAreas();
         const dailyCasesData = GetDailyCases(favouriteAreas);
 
+        if(!favouriteAreas) {
+            return;
+        }
+
         dailyCasesData.then((areaData) => {
             areaData.forEach(d => {
                 let formattedData = [];
@@ -49,7 +53,9 @@ class DailyCases extends React.Component {
 
     render() {
         return (this.state.loaded &&
-            <BarChart dailySeries={this.state.dailySeries} dailyDate={this.state.dailyDate} />
+            <div className="separator">
+                <BarChart dailySeries={this.state.dailySeries} dailyDate={this.state.dailyDate} />
+            </div>
         );
     }
 }

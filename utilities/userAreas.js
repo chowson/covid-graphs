@@ -9,10 +9,16 @@ export function SetFavouriteAreas(areas) {
 export function GetFavouriteAreas() {
     let favouriteAreas = JSON.parse(localStorage.getItem('favouriteAreas'));
 
-    if(!favouriteAreas) {
+    if(!favouriteAreas || favouriteAreas.length == 0) {
         SetFavouriteAreas(defaultAreas);
         favouriteAreas = defaultAreas;
     }
+    
+    return favouriteAreas
+        .map(area => areas.find(a => a.Name === area))
+        .filter(area => !!area);
+}
 
-    return favouriteAreas.map(area => areas.find(a => a.Name === area));
+export function GetAllAreas() {
+    return areas;
 }

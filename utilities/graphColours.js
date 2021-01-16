@@ -1,6 +1,10 @@
 export default [
-    "steelblue",
+    "SteelBlue",
     "LightCoral",
     "Orange",
-    "DarkOliveGreen"
+    "DarkOliveGreen",
+    "MidnightBlue",
+    "FireBrick",
+    "SandyBrown",
+    "DarkSeaGreen"
 ]

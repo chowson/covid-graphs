@@ -15,7 +15,7 @@ function GetData(url, areas) {
         return Promise.all(areas.map(f));
     }
 
-    return f(areas);
+    return Promise.all([f(areas[0])]);
 }
 
 export const GetDailyCases = (areas) => {
