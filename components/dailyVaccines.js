@@ -31,12 +31,13 @@ function DailyVaccines() {
     }
     
     return (
-        <div className="separator">
+        <div className="separator w-full">
             { data && data.data && 
                 <div>
                     <StocksChart
                         title="Daily Vaccines by publish date"
                         series={getSeries(data.data).series}
+                        valueSuffix="doses"
                     />
                 </div>
             }

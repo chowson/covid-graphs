@@ -3,9 +3,11 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
 function BarChart({ dailySeries, dailyDate }) {
+    let height = 300 + ((dailySeries.length - 4) * 30);
+
     let options = {
         chart: {
-            height: 300,
+            height: height,
             type: "bar",
             style: { fontFamily: "'Jost', helvetica" }
         },

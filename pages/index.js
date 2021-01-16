@@ -31,10 +31,6 @@ export default class Home extends React.Component {
       <div>
         <Head>
           <title>Cases | COVID-19 Graphs</title>
-          <link rel="icon" href="/favicon.ico" />
-          <link rel="preconnect" href="https://api.coronavirus.data.gov.uk" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet"></link>
         </Head>
 
         <Header />

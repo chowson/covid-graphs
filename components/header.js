@@ -3,9 +3,18 @@ import Link from 'next/link'
 import Head from 'next/head';
 
 function Header() {
+    const fontUrl = "https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap";
+
     return (
         <header className="bg-cyan-800 shadow-xl sticky top-0 z-50">
-            <Head>
+            <Head>     
+                <link rel="icon" href="/favicon.ico" />
+                <link rel="preconnect" href="https://api.coronavirus.data.gov.uk" />
+
+                <link rel="preconnect" href="https://fonts.gstatic.com" />
+                <link rel="preload" as="style" href={fontUrl} />
+                <link rel="stylesheet" href={fontUrl} media="print" onload="this.media='all'" />
+                
                 <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
                 <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
                 <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />

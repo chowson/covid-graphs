@@ -2,7 +2,7 @@ import React from 'react';
 import Highcharts from 'highcharts/highstock'
 import HighchartsReact from 'highcharts-react-official';
 
-function StocksChart({ title, series }) {
+function StocksChart({ title, series, valueSuffix }) {
     let options = {
         chart: {
             height: 600,
@@ -33,7 +33,7 @@ function StocksChart({ title, series }) {
         series: series,
 
         tooltip: {
-            valueSuffix: " cases"
+            valueSuffix: ` ${valueSuffix}`
         },
 
         responsive: {

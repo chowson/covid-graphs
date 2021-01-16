@@ -38,6 +38,7 @@ function CumulativeVaccines() {
                     <StocksChart
                         title="Cumulative Vaccines by publish date"
                         series={getSeries(data.data).series}
+                        valueSuffix="doses"
                     />
                 </div>
             }
