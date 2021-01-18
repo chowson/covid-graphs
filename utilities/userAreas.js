@@ -2,6 +2,12 @@ import areas from '../data/areas.json';
 
 const defaultAreas = [ 'Lewisham', 'Solihull', 'South Cambridgeshire', 'Dorset'];
 
+export function TotalPopulation() {
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+    return areas.map(area => area.Population).reduce(reducer);
+}
+
 export function SetFavouriteAreas(areas) {
     localStorage.setItem('favouriteAreas', JSON.stringify(areas));
 }
