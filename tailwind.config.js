@@ -26,7 +26,11 @@ module.exports = {
         '2xl': '4rem',
       },
     },
-    extend: {},
+    extend: {
+      height: theme => ({
+        "stocks": "600px"
+      }),
+    }
   },
   variants: {
     extend: {},

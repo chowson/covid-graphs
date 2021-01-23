@@ -47,7 +47,8 @@ class CasesBySpecimenDate extends React.Component {
                         }
                         return 0;
                     }),
-                    color: graphColours[seriesOptions.length]
+                    color: graphColours[seriesOptions.length],
+                    type: 'spline'
                 });
 
                 const averageData = [];
@@ -70,7 +71,8 @@ class CasesBySpecimenDate extends React.Component {
                 averageSeriesOptions.push({
                     name: d.area.Name,
                     data: averageData.reverse(),
-                    color: graphColours[averageSeriesOptions.length]
+                    color: graphColours[averageSeriesOptions.length],
+                    type: 'spline'
                 });
             });
 
@@ -83,15 +85,19 @@ class CasesBySpecimenDate extends React.Component {
     };
 
     render() {
-        return (this.state.loaded &&
+        return (
             <div>
-                <div className="separator">
-                    <StocksChart title="Cases by Specimen Date (per 100,000)" series={this.state.averageSeries} valueSuffix="cases" />
+                <div className="separator h-stocks box-content">
+                    { this.state.loaded &&
+                        <StocksChart title="Cases by Specimen Date (per 100,000)" series={this.state.averageSeries} valueSuffix="cases" />
+                    }
                 </div>
-                <div className="separator">
-                    <StocksChart title="Cases by Specimen Date" series={this.state.series} valueSuffix="cases" />
+                <div className="separator h-stocks box-content">
+                    { this.state.loaded &&
+                        <StocksChart title="Cases by Specimen Date" series={this.state.series} valueSuffix="cases" />
+                    }
                 </div>
-
+                
                 <CasesData
                     series={this.state.series}
                     averageSeries={this.state.averageSeries}

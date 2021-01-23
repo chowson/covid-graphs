@@ -36,13 +36,15 @@ function CumulativeVaccines() {
         cumulativeVaccineSeries.series.push({
             name: "Cumulative First Dose Vaccines",
             data: vaccineData.data.map((day => [new Date(day.date).getTime(), day.cumPeopleVaccinatedFirstDoseByPublishDate])),
-            color: graphColours[0]
+            color: graphColours[0],
+            type: 'spline',
         });
 
         cumulativeVaccineSeries.series.push({
             name: "Cumulative Second Dose Vaccines",
             data: vaccineData.data.map((day => [new Date(day.date).getTime(), day.cumPeopleVaccinatedSecondDoseByPublishDate])),
-            color: graphColours[1]
+            color: graphColours[1],
+            type: 'spline'
         });
 
         vaccineData.data = _.sortBy(vaccineData.data, ['date']);
@@ -73,7 +75,7 @@ function CumulativeVaccines() {
     };
 
     return (
-        <div>
+        <div className="separator w-full h-stocks box-content">
             { data && data.data && 
                 <div>
                     <StocksChart

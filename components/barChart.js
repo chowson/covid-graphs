@@ -3,6 +3,13 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
 function BarChart({ dailySeries, dailyDate }) {
+    Highcharts.setOptions({
+        lang: {
+            decimalPoint: '.',
+            thousandsSep: ','
+        }
+    });
+
     let height = 300 + ((dailySeries.length - 4) * 30);
 
     let options = {
@@ -54,10 +61,12 @@ function BarChart({ dailySeries, dailyDate }) {
     };
 
     return (
-        <HighchartsReact
-            highcharts={Highcharts}
-            options={options}
-        />
+        <div style={ { "height": `${height}px` } }>
+            <HighchartsReact
+                highcharts={Highcharts}
+                options={options}
+            />
+        </div>
     );
 }
 

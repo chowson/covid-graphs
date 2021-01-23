@@ -1,5 +1,5 @@
 .table-container {
-    max-height: 50vh;
+    height: 50vh;
     overflow: scroll;
     display: inline-block;
     @apply max-w-full mb-12 mt-4;
@@ -7,7 +7,6 @@
 
 table.data-table {
     border-spacing: 0;
-    height: 25vh;
     overflow-y: scroll;
     @apply text-xs;
 }

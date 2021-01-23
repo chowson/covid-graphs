@@ -25,26 +25,40 @@ function VaccinesToday() {
                     {firstDose && firstDose.data && <span className="text-gray-600 text-xs">{getDate(firstDose.data.data[0].date)}</span>}
                 </div>
                 <ul className="flex my-4 w-full md:w-2/3">
-                    {firstDose && firstDose.data && 
-                        <li className="text-white bg-cyan-900 bg-opacity-90 p-4 rounded-3xl shadow-lg text-center md:text-left mr-4 w-1/2 md:w-auto">
-                            <span className="font-bold text-sm">First Dose</span><br />
-                            <span className="flex flex-col md:flex-row items-center">
-                                <span className="text-2xl" style={{width: '8ch'}}><CountUpComponent number={firstDose.data.data[0].value} delay="0" /></span>
-                                <span className="md:ml-6">
-                                    (<CountUpComponent number={((firstDose.data.data[0].value / TotalPopulation()) * 100)} delay="2000" suffix="%" decimalPlaces={2} />)
-                                </span>
+                    <li className="text-white bg-cyan-900 bg-opacity-90 p-4 rounded-3xl shadow-lg text-center md:text-left mr-4 w-1/2 md:w-auto">
+                        <span className="font-bold text-sm">First Dose</span><br />
+                        <span className="flex flex-col md:flex-row items-center">
+                            <span className="text-2xl" style={{width: '8ch'}}>
+                                {secondDose && secondDose.data
+                                    ? (<CountUpComponent number={firstDose.data.data[0].value} delay="0" />)
+                                    : (<>0</>)
+                                }
                             </span>
-                        </li> }
-                    {secondDose && secondDose.data && 
-                        <li className="text-white bg-cyan-900 bg-opacity-90 p-4 rounded-3xl shadow-lg text-center md:text-left w-1/2 md:w-auto">
-                            <span className="font-bold text-sm">Second Dose</span><br />
-                            <span className="flex flex-col md:flex-row items-center">
-                                <span className="text-2xl"><CountUpComponent number={secondDose.data.data[0].value} delay="4000" /></span>
-                                <span className="md:ml-6">
-                                    (<CountUpComponent number={((secondDose.data.data[0].value / TotalPopulation()) * 100)} delay="6000" suffix="%" decimalPlaces={2} />)
-                                </span>
+                            <span className="md:ml-6">
+                                {firstDose && firstDose.data 
+                                    ? (<CountUpComponent number={((firstDose.data.data[0].value / TotalPopulation()) * 100)} delay="2000" suffix="%" decimalPlaces={2} />)
+                                    : (<>0</>)
+                                }
                             </span>
-                        </li> }
+                        </span>
+                    </li>
+                    <li className="text-white bg-cyan-900 bg-opacity-90 p-4 rounded-3xl shadow-lg text-center md:text-left w-1/2 md:w-auto">
+                        <span className="font-bold text-sm">Second Dose</span><br />
+                        <span className="flex flex-col md:flex-row items-center">
+                            <span className="text-2xl">
+                                {secondDose && secondDose.data
+                                    ? (<CountUpComponent number={secondDose.data.data[0].value} delay="0" />)
+                                    : (<>0</>)
+                                }
+                            </span>
+                            <span className="md:ml-6">
+                                {secondDose && secondDose.data
+                                    ? (<CountUpComponent number={((secondDose.data.data[0].value / TotalPopulation()) * 100)} delay="2000" suffix="%" decimalPlaces={2} />)
+                                    : (<>0</>)
+                                }
+                            </span>
+                        </span>
+                    </li>
                 </ul>
             </div>
         </div>

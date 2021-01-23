@@ -3,6 +3,13 @@ import Highcharts from 'highcharts/highstock'
 import HighchartsReact from 'highcharts-react-official';
 
 function StocksChart({ title, series, valueSuffix }) {
+    Highcharts.setOptions({
+        lang: {
+            decimalPoint: '.',
+            thousandsSep: ','
+        }
+    });
+
     let options = {
         chart: {
             height: 600,
@@ -44,13 +51,13 @@ function StocksChart({ title, series, valueSuffix }) {
                     },
                     chartOptions: {
                         chart: {
-                            height: 500
+                            height: 600
                         },
                         subtitle: {
                             text: null
                         },
                         navigator: {
-                            enabled: false
+                            enabled: true
                         }
                     }
                 }
