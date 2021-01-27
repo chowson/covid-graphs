@@ -51,8 +51,20 @@ function CumulativeVaccines() {
         
         for(let target of VaccineTargets) {
             let targetData = [];
-            targetData.push([new Date(vaccineData.data[0].date).getTime(), 0]);
-            targetData.push([new Date(target.date).getTime(), target.firstDoses]);
+            const startDate = new Date(vaccineData.data.filter(day => day.cumPeopleVaccinatedFirstDoseByPublishDate !== null)[0].date);
+            targetData.push([startDate.getTime(), 0]);
+            
+            const targetDays = (new Date(target.date).getTime() - startDate) / (1000 * 3600 * 24);
+            const rateRequired = target.firstDoses / targetDays;
+            const startDoses = 0;
+            
+            const date = startDate;
+            date.setDate(date.getDate() + 1);
+            while(date <= new Date(target.date)) {
+                startDoses += rateRequired;
+                targetData.push([date.getTime(), Math.ceil(startDoses)]);
+                date.setDate(date.getDate() + 1);
+            }
             
             cumulativeVaccineSeries.series.push({
                 name: `Target: ${target.name}`,
@@ -68,6 +80,11 @@ function CumulativeVaccines() {
                 dashStyle: "ShortDot"
             });
         }
+
+        cumulativeVaccineSeries.series.forEach((series) => {
+            series.data = series.data.filter(dataEntry => dataEntry[1] !== null);
+            series.data = _.sortBy(series.data, [1]);
+        });
 
         series.push(cumulativeVaccineSeries);
         
