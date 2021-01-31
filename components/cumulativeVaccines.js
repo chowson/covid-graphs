@@ -3,27 +3,11 @@ import { GetVaccinesData } from '../utilities/apiFetcher';
 import VaccineTargets from '../data/vaccineTargets.json';
 import StocksChart from '../components/stocksChart';
 import graphColours from '../utilities/graphColours';
+import predictDoses from '../utilities/targets/predictTarget';
 import _ from 'lodash';
 
 function CumulativeVaccines() {
     const data = GetVaccinesData();
-
-    const predictDateToDoses = (vaccineData, target) => {
-        const last7Days = vaccineData.data.slice(vaccineData.data.length - 7);
-        let last7DaysDosesRate = Math.floor((last7Days[6].cumPeopleVaccinatedFirstDoseByPublishDate - last7Days[0].cumPeopleVaccinatedFirstDoseByPublishDate) / 7);
-
-        let progressAtCurrentRate = [ [ new Date(last7Days[6].date).getTime(), last7Days[6].cumPeopleVaccinatedFirstDoseByPublishDate ] ];
-        let totalDoses = last7Days[6].cumPeopleVaccinatedFirstDoseByPublishDate;
-        let predictedDate = new Date(last7Days[6].date);
-
-        while(totalDoses < target.firstDoses) {
-            totalDoses += last7DaysDosesRate;
-            predictedDate.setDate(predictedDate.getDate() + 1);
-            progressAtCurrentRate.push([predictedDate.getTime(), totalDoses]);
-        }
-
-        return progressAtCurrentRate;
-    };
 
     const getSeries = (vaccineData) => {
         const series = [];
@@ -75,7 +59,7 @@ function CumulativeVaccines() {
 
             cumulativeVaccineSeries.series.push({
                 name: `Predicted first doses at last 7 day rate`,
-                data: predictDateToDoses(vaccineData, target),
+                data: predictDoses(vaccineData, target),
                 color: graphColours[0],
                 dashStyle: "ShortDot"
             });

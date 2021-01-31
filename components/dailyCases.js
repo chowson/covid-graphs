@@ -1,63 +1,58 @@
-import React, { componentDidMount } from 'react';
+import React, { useState } from 'react';
 import { GetDailyCases } from '../utilities/apiFetcher';
 import { GetFavouriteAreas } from '../utilities/userAreas';
+import useLocalStorage from '../hooks/useLocalStorage';
 import graphColours from '../utilities/graphColours';
 import BarChart from '../components/barChart';
 
-class DailyCases extends React.Component {
-    constructor(props) {
-        super(props);
+function DailyCases() {
+    const [dailyDate, setDailyDate] = useState(null);
 
-        this.state = { 
-            loaded: false,
-            dailyDate: null,
-            dailySeries: []
-        };
+    const [favouriteAreas, setFavouriteAreas] = useLocalStorage('favouriteAreas', []);
+    const dailyCasesData = GetDailyCases(favouriteAreas);
+
+    if(!favouriteAreas) {
+        return (
+            <div>No data</div>
+        );
     }
+    
+    const getSeries = (dailyCasesData) => {
+        let series = [];
 
-    componentDidMount() {
-        const favouriteAreas = GetFavouriteAreas();
-        const dailyCasesData = GetDailyCases(favouriteAreas);
-
-        if(!favouriteAreas) {
-            return;
-        }
-
-        dailyCasesData.then((areaData) => {
-            areaData.forEach(d => {
-                let formattedData = [];
-                for (let entry of d.data.data) {
-                    formattedData.push(entry.value);
-                    this.setState({
-                        dailyDate: new Date(entry.date).toLocaleDateString("en-GB", {
+        dailyCasesData.forEach(d => {
+            let formattedData = [];
+            for (let entry of d.data.data.data) {
+                formattedData.push(entry.value);
+                
+                if(dailyDate === null) {
+                    setDailyDate(new Date(entry.date).toLocaleDateString("en-GB", {
                             month: "short",
                             day: "2-digit"
                         })
-                    });
+                    );
                 }
+            }
 
-                var joined = this.state.dailySeries.concat({
-                    name: d.area.Name,
-                    data: formattedData,
-                    color: graphColours[this.state.dailySeries.length]
-                });
-
-                this.setState({ dailySeries: joined });
-            });
-
-            this.setState({
-                loaded: true
+            series = series.concat({
+                name: d.data.name,
+                data: formattedData,
+                color: graphColours[series.length]
             });
         });
-    };
 
-    render() {
-        return (this.state.loaded &&
-            <div className="separator">
-                <BarChart dailySeries={this.state.dailySeries} dailyDate={this.state.dailyDate} />
-            </div>
-        );
+        return series;
     }
+
+    const hasLoaded = (dailyCasesData) => {
+        return dailyCasesData.length > 0 && dailyCasesData.filter(data => data.data).length === dailyCasesData.length;
+    }
+    
+    return (dailyCasesData && hasLoaded(dailyCasesData) &&
+        <div className="separator">
+            <BarChart dailySeries={getSeries(dailyCasesData)} dailyDate={dailyDate} />
+        </div>
+    );
 }
 
 export default DailyCases;

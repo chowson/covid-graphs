@@ -1,5 +1,5 @@
 import axios from 'axios';
-import swr from 'swr';
+import useSWR from 'swr';
 
 function GetData(url, areas) {
     const f = (area) => {
@@ -18,10 +18,24 @@ function GetData(url, areas) {
     return Promise.all([f(areas[0])]);
 }
 
-export const GetDailyCases = (areas) => {
-    const getUrl = (areaName) => `https://api.coronavirus.data.gov.uk/v1/data?filters=areaType=ltla;areaName=${areaName}&latestBy=newCasesByPublishDate&structure=%7B%22date%22:%22date%22,%22value%22:%22newCasesByPublishDate%22%7D`;
+const mulitpleFetcher = (url, areaName) => {
+    return axios.get(url).then(res => {
+        return {
+            name: areaName,
+            data: res.data
+        }
+    });
+}
 
-    return GetData(getUrl, areas);
+export const GetDailyCases = (areas) => {
+    const getUrl = (areaName) => [
+        `https://api.coronavirus.data.gov.uk/v1/data?filters=areaType=ltla;areaName=${areaName}&latestBy=newCasesByPublishDate&structure=%7B%22date%22:%22date%22,%22value%22:%22newCasesByPublishDate%22%7D`,
+        areaName
+    ];
+
+    const urls = areas.map(areaName => getUrl(areaName));
+    
+    return urls.map(url => useSWR(url, mulitpleFetcher));
 }
 
 export const GetCases = (areas) => {
@@ -33,5 +47,5 @@ export const GetCases = (areas) => {
 const fetcher = url => axios.get(url).then(res => res.data);
 
 export const GetVaccinesData = () => {
-    return swr('https://api.coronavirus.data.gov.uk/v1/data?filters=areaType=overview&structure=%7B"date":"date","areaName":"areaName","newPeopleVaccinatedFirstDoseByPublishDate":"newPeopleVaccinatedFirstDoseByPublishDate","cumPeopleVaccinatedFirstDoseByPublishDate":"cumPeopleVaccinatedFirstDoseByPublishDate","newPeopleVaccinatedSecondDoseByPublishDate":"newPeopleVaccinatedSecondDoseByPublishDate","cumPeopleVaccinatedSecondDoseByPublishDate":"cumPeopleVaccinatedSecondDoseByPublishDate","weeklyPeopleVaccinatedFirstDoseByVaccinationDate":"weeklyPeopleVaccinatedFirstDoseByVaccinationDate","weeklyPeopleVaccinatedSecondDoseByVaccinationDate":"weeklyPeopleVaccinatedSecondDoseByVaccinationDate"%7D', fetcher);
+    return useSWR('https://api.coronavirus.data.gov.uk/v1/data?filters=areaType=overview&structure=%7B"date":"date","areaName":"areaName","newPeopleVaccinatedFirstDoseByPublishDate":"newPeopleVaccinatedFirstDoseByPublishDate","cumPeopleVaccinatedFirstDoseByPublishDate":"cumPeopleVaccinatedFirstDoseByPublishDate","newPeopleVaccinatedSecondDoseByPublishDate":"newPeopleVaccinatedSecondDoseByPublishDate","cumPeopleVaccinatedSecondDoseByPublishDate":"cumPeopleVaccinatedSecondDoseByPublishDate","weeklyPeopleVaccinatedFirstDoseByVaccinationDate":"weeklyPeopleVaccinatedFirstDoseByVaccinationDate","weeklyPeopleVaccinatedSecondDoseByVaccinationDate":"weeklyPeopleVaccinatedSecondDoseByVaccinationDate"%7D', fetcher);
 }

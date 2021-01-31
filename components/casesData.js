@@ -7,7 +7,6 @@ export default function CasesData({ series, averageSeries, areas }) {
     useEffect(() => {
         if(!(series.length && averageSeries.length && areas.length))
         {
-            console.log('no datas');
             return;
         }
         var table = dataTable.current;

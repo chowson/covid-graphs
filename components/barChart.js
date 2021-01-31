@@ -3,11 +3,13 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
 function BarChart({ dailySeries, dailyDate }) {
-    Highcharts.setOptions({
-        lang: {
-            decimalPoint: '.',
-            thousandsSep: ','
-        }
+    useEffect(() => {
+        Highcharts.setOptions({
+            lang: {
+                decimalPoint: '.',
+                thousandsSep: ','
+            }
+        });
     });
 
     let height = 300 + ((dailySeries.length - 4) * 30);
