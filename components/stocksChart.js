@@ -2,7 +2,7 @@ import React from 'react';
 import Highcharts from 'highcharts/highstock'
 import HighchartsReact from 'highcharts-react-official';
 
-function StocksChart({ title, series, valueSuffix }) {
+function StocksChart({ title, series, valueSuffix, xAxis }) {
     Highcharts.setOptions({
         lang: {
             decimalPoint: '.',
@@ -42,6 +42,12 @@ function StocksChart({ title, series, valueSuffix }) {
         tooltip: {
             valueSuffix: ` ${valueSuffix}`
         },
+
+        xAxis: xAxis,
+
+        // time: {
+        //     useUTC: false
+        // },
 
         responsive: {
             rules: [

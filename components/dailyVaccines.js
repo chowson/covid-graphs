@@ -1,7 +1,7 @@
 import { GetVaccinesData } from '../utilities/apiFetcher';
 import StocksChart from '../components/stocksChart';
 import graphColours from '../utilities/graphColours';
-import { MidnightBlue } from '../utilities/graphColours';
+import { ToUtc } from '../utilities/time';
 import last7DayAverages from '../utilities/sevenDayAverage';
 
 function DailyVaccines() {
@@ -12,11 +12,11 @@ function DailyVaccines() {
 
         const firstDoses = vaccineData.data
             .filter(day => day.newPeopleVaccinatedFirstDoseByPublishDate !== null)
-            .map((day => [new Date(day.date).getTime(), day.newPeopleVaccinatedFirstDoseByPublishDate]));
+            .map((day => [ToUtc(new Date(day.date)), day.newPeopleVaccinatedFirstDoseByPublishDate]));
 
         const secondDoses = vaccineData.data
             .filter(day => day.newPeopleVaccinatedSecondDoseByPublishDate !== null)
-            .map((day => [new Date(day.date).getTime(), day.newPeopleVaccinatedSecondDoseByPublishDate]));
+            .map((day => [ToUtc(new Date(day.date)), day.newPeopleVaccinatedSecondDoseByPublishDate]));
 
         var dailyVaccineSeries = {
             id: 'dailyVaccineChart',

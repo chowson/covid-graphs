@@ -1,7 +1,12 @@
 [
     {
-        "name": "The over-70s, healthcare workers and those required to shield",
+        "name": "Over-70s, healthcare workers and those shielding",
         "date": "2021-02-15",
         "firstDoses": 15000000
+    },
+    {
+        "name": "The over-50s & remaining priority groups",
+        "date": "2021-04-30",
+        "firstDoses": 17000000
     }
 ]

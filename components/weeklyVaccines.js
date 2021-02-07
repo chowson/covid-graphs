@@ -1,6 +1,6 @@
 import React from 'react';
 import { GetVaccinesData } from '../utilities/apiFetcher';
-import VaccineTargets from '../data/vaccineTargets.json';
+import { ToUtc } from '../utilities/time';
 import StocksChart from '../components/stocksChart';
 import graphColours from '../utilities/graphColours';
 import _ from 'lodash';
@@ -21,7 +21,7 @@ function WeeklyVaccines() {
             name: "Weekly First Dose Vaccines",
             data: vaccineData.data
                         .filter(day => day.weeklyPeopleVaccinatedFirstDoseByVaccinationDate !== null)
-                        .map((day => [new Date(day.date).getTime(), day.weeklyPeopleVaccinatedFirstDoseByVaccinationDate])),
+                        .map((day => [ToUtc(new Date(day.date)), day.weeklyPeopleVaccinatedFirstDoseByVaccinationDate])),
             color: graphColours[0],
             type: 'column',
             stacking: true
@@ -31,7 +31,7 @@ function WeeklyVaccines() {
             name: "Weekly Second Dose Vaccines",
             data: vaccineData.data
                         .filter(day => day.weeklyPeopleVaccinatedSecondDoseByVaccinationDate !== null)
-                        .map((day => [new Date(day.date).getTime(), day.weeklyPeopleVaccinatedSecondDoseByVaccinationDate])),
+                        .map((day => [ToUtc(new Date(day.date)), day.weeklyPeopleVaccinatedSecondDoseByVaccinationDate])),
             color: graphColours[1],
             type: 'column',
             stacking: true

@@ -10,7 +10,7 @@ const LinkElement = withRouter(
     const linkPathname = typeof props.href === "string" ? props.href : props.href.pathname || null;
 
     if (router.pathname === linkPathname && activeClassName) {
-      className += ` ${activeClassName}`.trim();
+      className += ` ${activeClassName.trim()}`;
     }
 
     return <Link {...props}>{cloneElement(child, { className })}</Link>;

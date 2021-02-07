@@ -56,14 +56,14 @@ function Header() {
                     </div>
                     <nav className="w-full md:w-auto">
                         <ul className="flex w-full text-center">
-                            <li className="mr-2 pr-4 md:pr-12 py-2 w-1/2">
+                            <li className="mr-2 pr-4 md:pr-12 w-1/2 md:w-full">
                                 <LinkElement activeClassName="underline" href="/">
-                                    <a>Cases</a>
+                                    <a className="py-2 block">Cases</a>
                                 </LinkElement>
                             </li>
-                            <li className="py-2 flex-shrink-0 w-1/2">
+                            <li className="w-1/2 md:w-full">
                                 <LinkElement activeClassName="underline" href="/vaccine">
-                                    <a>Vaccine</a>
+                                    <a className="py-2 block">Vaccine</a>
                                 </LinkElement>
                             </li>
                         </ul>
