@@ -23,7 +23,8 @@ function WeeklyVaccines() {
                         .filter(day => day.weeklyPeopleVaccinatedFirstDoseByVaccinationDate !== null)
                         .map((day => [new Date(day.date).getTime(), day.weeklyPeopleVaccinatedFirstDoseByVaccinationDate])),
             color: graphColours[0],
-            type: 'column'
+            type: 'column',
+            stacking: true
         });
 
         weeklyVaccineSeries.series.push({
@@ -32,7 +33,8 @@ function WeeklyVaccines() {
                         .filter(day => day.weeklyPeopleVaccinatedSecondDoseByVaccinationDate !== null)
                         .map((day => [new Date(day.date).getTime(), day.weeklyPeopleVaccinatedSecondDoseByVaccinationDate])),
             color: graphColours[1],
-            type: 'column'
+            type: 'column',
+            stacking: true
         });
 
         series.push(weeklyVaccineSeries);
