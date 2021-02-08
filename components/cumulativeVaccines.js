@@ -74,8 +74,13 @@ function CumulativeVaccines() {
                 width: 1,
                 label: {
                     rotation: 0,
-                    align: 'right',
-                    text: target.name
+                    align: xAxis.plotLines.length == 0 ? 'center' : 'right',
+                    text: target.name,
+                    style: {
+                        width: '150px'
+                    },
+                    y: 15,
+                    x: -5
                 }
             })
 
