@@ -95,8 +95,6 @@ function CumulativeVaccines() {
             dashStyle: "ShortDot"
         });
 
-        console.log(xAxis);
-
         cumulativeVaccineSeries.series.forEach((series) => {
             series.data = series.data.filter(dataEntry => dataEntry[1] !== null);
             series.data = _.sortBy(series.data, [1]);
