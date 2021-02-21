@@ -8,5 +8,10 @@
         "name": "The over-50s & remaining priority groups",
         "date": "2021-04-30",
         "firstDoses": 17000000
+    },
+    {
+        "name": "All adults offered 1st dose",
+        "date": "2021-07-31",
+        "firstDoses": 21000000
     }
 ]

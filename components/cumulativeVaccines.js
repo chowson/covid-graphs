@@ -40,13 +40,15 @@ function CumulativeVaccines() {
         let targetStartDate = new Date(vaccineData.data.filter(day => day.cumPeopleVaccinatedFirstDoseByPublishDate !== null)[0].date);
         let targetStartDoses = 0;
         let predictFromDate = _.last(vaccineData.data).date;
+        
+        let predictedTargetData = [];
 
         let targetData = [];
-        for(let target of VaccineTargets) {            
+        for(let target of VaccineTargets) {
             const startDate = targetStartDate;
             const startDoses = targetStartDoses;
 
-            targetData.push([startDate.getTime(), startDoses]);
+            targetData.push([ToUtc(startDate), startDoses]);
             
             const targetDays = (new Date(target.date).getTime() - startDate) / (1000 * 3600 * 24);
             const rateRequired = target.firstDoses / targetDays;
@@ -60,12 +62,7 @@ function CumulativeVaccines() {
                 date.setDate(date.getDate() + 1);
             }
             
-            cumulativeVaccineSeries.series.push({
-                name: `Predicted first doses at last 7 day rate`,
-                data: predictDoses(vaccineData, predictFromDate, targetStartDoses, target.firstDoses),
-                color: graphColours[0],
-                dashStyle: "ShortDot"
-            });
+            predictedTargetData.push(...predictDoses(vaccineData, predictFromDate, targetStartDoses, target.firstDoses));
 
             xAxis.plotLines.push({
                 value: ToUtc(new Date(target.date)),
@@ -77,7 +74,7 @@ function CumulativeVaccines() {
                     align: xAxis.plotLines.length == 0 ? 'center' : 'right',
                     text: target.name,
                     style: {
-                        width: '150px'
+                        width: '100px'
                     },
                     y: 15,
                     x: -5
@@ -85,13 +82,20 @@ function CumulativeVaccines() {
             })
 
             targetStartDate.setDate(date.getDate() - 1);
-            targetStartDoses = target.firstDoses;
+            targetStartDoses += target.firstDoses;
         }
 
         cumulativeVaccineSeries.series.push({
             name: `Target`,
             data: targetData,
             color: graphColours[2],
+            dashStyle: "ShortDot"
+        });
+
+        cumulativeVaccineSeries.series.push({
+            name: `Predicted first doses at last 7 day rate`,
+            data: predictedTargetData,
+            color: graphColours[0],
             dashStyle: "ShortDot"
         });
 
@@ -114,6 +118,8 @@ function CumulativeVaccines() {
                         series={getSeries(data.data).series}
                         valueSuffix="doses"
                         xAxis={xAxis}
+                        initialDaysMin={30}
+                        initialDaysMax={45}
                     />
                 </div>
             }
