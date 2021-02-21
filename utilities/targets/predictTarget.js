@@ -1,3 +1,5 @@
+import { ToUtc } from '../time';
+
 const predictTarget = (vaccineData, startDate, startFirstDoses, targetFirstDoses) => {
     const last7Days = vaccineData.data.slice(vaccineData.data.length - 7);
     
@@ -10,7 +12,7 @@ const predictTarget = (vaccineData, startDate, startFirstDoses, targetFirstDoses
     while(totalDoses < (startFirstDoses + targetFirstDoses)) {
         totalDoses += last7DaysDosesRate;
         predictedDate.setDate(predictedDate.getDate() + 1);
-        progressAtCurrentRate.push([predictedDate.getTime(), totalDoses]);
+        progressAtCurrentRate.push([ToUtc(predictedDate), totalDoses]);
     }
 
     return progressAtCurrentRate;
