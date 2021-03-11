@@ -5,7 +5,7 @@ import StocksChart from '../components/stocksChart';
 import graphColours from '../utilities/graphColours';
 import predictDoses from '../utilities/targets/predictTarget';
 import _ from 'lodash';
-import { ToUtc } from '../utilities/time';
+import { ToUtc, AddDays } from '../utilities/time';
 
 function CumulativeVaccines() {
     const data = GetVaccinesData();
@@ -22,9 +22,11 @@ function CumulativeVaccines() {
             title: 'Cumulative Vaccines by publish date',
             series: []
         }
+
+        const cumulativeFirstDoses = vaccineData.data.map((day => [new Date(day.date).getTime(), day.cumPeopleVaccinatedFirstDoseByPublishDate]));
         cumulativeVaccineSeries.series.push({
             name: "Cumulative First Dose Vaccines",
-            data: vaccineData.data.map((day => [new Date(day.date).getTime(), day.cumPeopleVaccinatedFirstDoseByPublishDate])),
+            data: cumulativeFirstDoses,
             color: graphColours[0],
             type: 'spline',
         });
@@ -99,6 +101,16 @@ function CumulativeVaccines() {
             dashStyle: "ShortDot"
         });
 
+        cumulativeVaccineSeries.series.push({
+            name: `Required second dose rollout`,
+            data: cumulativeFirstDoses.map(entry => {
+                let firstDoseDatePlus3Months = ToUtc(AddDays(entry[0], 90));
+                return [firstDoseDatePlus3Months, entry[1]];
+            }),
+            color: '#f4a4a4',
+            dashStyle: "ShortDot"
+        });
+        
         cumulativeVaccineSeries.series.forEach((series) => {
             series.data = series.data.filter(dataEntry => dataEntry[1] !== null);
             series.data = _.sortBy(series.data, [1]);
