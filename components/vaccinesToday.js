@@ -2,7 +2,7 @@ import React, { useEffect} from 'react';
 import useSWR from 'swr'
 import axios from 'axios';
 import CountUpComponent from '../components/countup';
-import { TotalPopulation } from '../utilities/userAreas';
+import { TotalAdultPopulation } from '../utilities/userAreas';
 
 const fetcher = url => {
     return axios.get(url).then(res => res.data);
@@ -37,7 +37,7 @@ function VaccinesToday() {
                                 </span>
                                 <span>
                                     {totalDoses && totalDoses.data 
-                                        ? (<CountUpComponent number={((totalDoses.data.data[0].newPeopleVaccinatedFirstDoseByPublishDate / TotalPopulation()) * 100)} delay="2000" suffix="%" decimalPlaces={2} />)
+                                        ? (<CountUpComponent number={((totalDoses.data.data[0].newPeopleVaccinatedFirstDoseByPublishDate / TotalAdultPopulation()) * 100)} delay="2000" suffix="%" decimalPlaces={2} />)
                                         : (<>0</>)
                                     }
                                 </span>
@@ -52,7 +52,7 @@ function VaccinesToday() {
                                 </span>
                                 <span>
                                     {totalDoses && totalDoses.data 
-                                        ? (<CountUpComponent number={((totalDoses.data.data[0].cumPeopleVaccinatedFirstDoseByPublishDate / TotalPopulation()) * 100)} delay="2000" suffix="%" decimalPlaces={2} />)
+                                        ? (<CountUpComponent number={((totalDoses.data.data[0].cumPeopleVaccinatedFirstDoseByPublishDate / TotalAdultPopulation()) * 100)} delay="2000" suffix="%" decimalPlaces={2} />)
                                         : (<>0</>)
                                     }
                                 </span>
@@ -72,7 +72,7 @@ function VaccinesToday() {
                                 </span>
                                 <span>
                                     {totalDoses && totalDoses.data 
-                                        ? (<CountUpComponent number={((totalDoses.data.data[0].newPeopleVaccinatedSecondDoseByPublishDate / TotalPopulation()) * 100)} delay="2000" suffix="%" decimalPlaces={2} />)
+                                        ? (<CountUpComponent number={((totalDoses.data.data[0].newPeopleVaccinatedSecondDoseByPublishDate / TotalAdultPopulation()) * 100)} delay="2000" suffix="%" decimalPlaces={2} />)
                                         : (<>0</>)
                                     }
                                 </span>                                
@@ -87,7 +87,7 @@ function VaccinesToday() {
                                 </span>
                                 <span>
                                     {totalDoses && totalDoses.data 
-                                        ? (<CountUpComponent number={((totalDoses.data.data[0].cumPeopleVaccinatedSecondDoseByPublishDate / TotalPopulation()) * 100)} delay="2000" suffix="%" decimalPlaces={2} />)
+                                        ? (<CountUpComponent number={((totalDoses.data.data[0].cumPeopleVaccinatedSecondDoseByPublishDate / TotalAdultPopulation()) * 100)} delay="2000" suffix="%" decimalPlaces={2} />)
                                         : (<>0</>)
                                     }
                                 </span>

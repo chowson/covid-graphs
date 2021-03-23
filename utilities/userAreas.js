@@ -8,6 +8,10 @@ export function TotalPopulation() {
     return areas.map(area => area.Population).reduce(reducer);
 }
 
+export function TotalAdultPopulation() {
+    return 53 * 1000000;
+}
+
 export function SetFavouriteAreas(areas) {
     localStorage.setItem('favouriteAreas', JSON.stringify(areas));
 }
