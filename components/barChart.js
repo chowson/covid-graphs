@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
-function BarChart({ dailySeries, dailyDate }) {
+function BarChart({ title, dailySeries, dailyDate }) {
     useEffect(() => {
         Highcharts.setOptions({
             lang: {
@@ -21,7 +21,7 @@ function BarChart({ dailySeries, dailyDate }) {
             style: { fontFamily: "'Jost', helvetica" }
         },
         title: {
-            text: "Today's Cases",
+            text: title,
             style: { fontWeight: "bold" }
         },
         subtitle: {

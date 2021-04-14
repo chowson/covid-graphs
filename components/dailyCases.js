@@ -4,6 +4,7 @@ import { GetFavouriteAreas } from '../utilities/userAreas';
 import useLocalStorage from '../hooks/useLocalStorage';
 import graphColours from '../utilities/graphColours';
 import BarChart from '../components/barChart';
+import { GetDateSuffix } from '../utilities/time';
 
 function DailyCases() {
     const [dailyDate, setDailyDate] = useState(null);
@@ -26,11 +27,8 @@ function DailyCases() {
                 formattedData.push(entry.value);
                 
                 if(dailyDate === null) {
-                    setDailyDate(new Date(entry.date).toLocaleDateString("en-GB", {
-                            month: "short",
-                            day: "2-digit"
-                        })
-                    );
+                    let date = new Date(entry.date);
+                    setDailyDate(`${date.toLocaleDateString("en-GB", { weekday: 'long' })} ${date.getDate()}${GetDateSuffix(date.getDate())} ${date.toLocaleDateString("en-GB", { month: "long" })}`);
                 }
             }
 
@@ -47,10 +45,12 @@ function DailyCases() {
     const hasLoaded = (dailyCasesData) => {
         return dailyCasesData.length > 0 && dailyCasesData.filter(data => data.data).length === dailyCasesData.length;
     }
+
+    console.log(dailyDate)
     
     return (dailyCasesData && hasLoaded(dailyCasesData) &&
         <div className="separator">
-            <BarChart dailySeries={getSeries(dailyCasesData)} dailyDate={dailyDate} />
+            <BarChart title={`${dailyDate} - Cases`} dailySeries={getSeries(dailyCasesData)} dailyDate={dailyDate} />
         </div>
     );
 }
