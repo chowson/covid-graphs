@@ -1,6 +1,6 @@
 import areas from '../data/areas.json';
 
-const defaultAreas = [ 'Lewisham', 'Solihull', 'South Cambridgeshire', 'Dorset'];
+const defaultAreas = [ 'Lewisham', 'Solihull', 'South Cambridgeshire'];
 
 export function TotalPopulation() {
     const reducer = (accumulator, currentValue) => accumulator + currentValue;

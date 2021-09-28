@@ -49,3 +49,19 @@ const fetcher = url => axios.get(url).then(res => res.data);
 export const GetVaccinesData = () => {
     return useSWR('https://api.coronavirus.data.gov.uk/v1/data?filters=areaType=overview&structure=%7B"date":"date","areaName":"areaName","newPeopleVaccinatedFirstDoseByPublishDate":"newPeopleVaccinatedFirstDoseByPublishDate","cumPeopleVaccinatedFirstDoseByPublishDate":"cumPeopleVaccinatedFirstDoseByPublishDate","newPeopleVaccinatedSecondDoseByPublishDate":"newPeopleVaccinatedSecondDoseByPublishDate","cumPeopleVaccinatedSecondDoseByPublishDate":"cumPeopleVaccinatedSecondDoseByPublishDate","weeklyPeopleVaccinatedFirstDoseByVaccinationDate":"weeklyPeopleVaccinatedFirstDoseByVaccinationDate","weeklyPeopleVaccinatedSecondDoseByVaccinationDate":"weeklyPeopleVaccinatedSecondDoseByVaccinationDate"%7D', fetcher);
 }
+
+export const GetVaccinesByDemogrpahicsData = (areas) => {
+    const getUrl = (areaName) => `https://api.coronavirus.data.gov.uk/v1/data?filters=areaType=ltla;areaName=${areaName}&structure={"date":"date","vaccinationsAgeDemographics":"vaccinationsAgeDemographics"}`;
+
+    const urls = areas.map(areaName => getUrl(areaName));
+
+    return urls.map(url => useSWR(url, mulitpleFetcher));
+}
+
+export const GetCasesByDemogrpahicsData = (areas) => {
+    const getUrl = (areaName) => `https://api.coronavirus.data.gov.uk/v1/data?filters=areaType=ltla;areaName=${areaName}&structure={"date":"date","newCasesBySpecimenDateAgeDemographics":"newCasesBySpecimenDateAgeDemographics"}`;
+
+    const urls = areas.map(areaName => getUrl(areaName));
+
+    return urls.map(url => useSWR(url, mulitpleFetcher));
+}

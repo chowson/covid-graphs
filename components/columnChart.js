@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
-function BarChart({ title, dailySeries, categories }) {
+function ColumnChart({ title, dailySeries, categories, max = 100, valueSuffix = '%', yAxisTitle }) {
     useEffect(() => {
         Highcharts.setOptions({
             lang: {
@@ -12,12 +12,12 @@ function BarChart({ title, dailySeries, categories }) {
         });
     });
 
-    let height = 300 + ((dailySeries.length - 4) * 30);
+    let height = 400;
 
     let options = {
         chart: {
             height: height,
-            type: "bar",
+            type: "column",
             style: { fontFamily: "'Jost', helvetica" }
         },
         title: {
@@ -48,15 +48,16 @@ function BarChart({ title, dailySeries, categories }) {
         },
         yAxis: {
             min: 0,
+            max,
             title: {
-                text: "New cases"
+                text: yAxisTitle
             },
             labels: {
                 overflow: "justify"
             }
         },
         tooltip: {
-            valueSuffix: " cases"
+            valueSuffix
         },
     
         series: dailySeries
@@ -72,4 +73,4 @@ function BarChart({ title, dailySeries, categories }) {
     );
 }
 
-export default BarChart;
+export default ColumnChart;

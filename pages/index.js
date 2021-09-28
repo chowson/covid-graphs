@@ -4,6 +4,7 @@ import Header from '../components/header';
 import DailyCases from '../components/dailyCases';
 import CasesBySpecimenDate from '../components/casesBySpecimenDate';
 import AreaSelector from '../components/areaSelector';
+import CasesByAgeDemographics from '../components/CasesByAgeDemographics';
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -39,6 +40,12 @@ export default class Home extends React.Component {
           <AreaSelector onAreaChange={this.localStorageUpdated.bind(this)} />
 
           <DailyCases key={`dailyCases_${this.areaKey()}`} />
+
+          <div className="separator box-content" style={{ height: '400px' }}>
+              { this.state.loaded &&
+                  <CasesByAgeDemographics />
+              }
+          </div>
 
           <CasesBySpecimenDate key={`casesBySpecimenDate_${this.areaKey()}`} />
         </main>

@@ -47,12 +47,10 @@ function DailyCases() {
     const hasLoaded = (dailyCasesData) => {
         return dailyCasesData.length > 0 && dailyCasesData.filter(data => data.data).length === dailyCasesData.length;
     }
-
-    console.log(dailyDate)
     
     return (dailyCasesData && hasLoaded(dailyCasesData) &&
         <div className="separator">
-            <BarChart title={`${graphTitle} - Cases`} dailySeries={getSeries(dailyCasesData)} dailyDate={dailyDate} />
+            <BarChart title={`${graphTitle} - Cases`} dailySeries={getSeries(dailyCasesData)} categories={[dailyDate]} />
         </div>
     );
 }

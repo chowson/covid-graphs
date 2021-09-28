@@ -5,6 +5,7 @@ import DailyVaccines from '../components/dailyVaccines';
 import CumulativeVaccines from '../components/cumulativeVaccines';
 import WeeklyVaccines from '../components/weeklyVaccines';
 import useLocalStorage from '../hooks/useLocalStorage';
+import VaccineAgeDemographics from '../components/vaccineAgeDemographics';
 
 export default function Vaccine() {
   const [favouriteAreas, setFavouriteAreas] = useLocalStorage('favouriteAreas', []);
@@ -21,6 +22,8 @@ export default function Vaccine() {
         <VaccinesToday />
 
         <CumulativeVaccines />
+
+        <VaccineAgeDemographics />
 
         <WeeklyVaccines />
 
