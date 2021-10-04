@@ -26,7 +26,7 @@ function CasesByAgeDemographics() {
                 const latestEntry = sortedData[0];
 
                 latestEntry.newCasesBySpecimenDateAgeDemographics.forEach(e => {
-                    if(e.age !== '00_59') {
+                    if(e.age !== '00_59' && e.age !== '60+') {
                         formattedData.push({ age: e.age, cases: e.cases });
                         if(e.cases > highestCases) {
                             highestCases = e.cases;
@@ -36,7 +36,7 @@ function CasesByAgeDemographics() {
 
                 if(categories.length == 0) {
                     latestEntry.newCasesBySpecimenDateAgeDemographics.forEach(e => {
-                        if(e.age !== '00_59') {
+                        if(e.age !== '00_59' && e.age !== '60+') {
                             categories.push(e.age.replace('_', ' to '));
                         }
                     });
