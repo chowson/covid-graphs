@@ -38,6 +38,13 @@ function CumulativeVaccines() {
             type: 'spline'
         });
 
+        cumulativeVaccineSeries.series.push({
+            name: "Cumulative Third Dose Vaccines",
+            data: vaccineData.data.map((day => [new Date(day.date).getTime(), day.cumPeopleVaccinatedThirdDoseByPublishDate])),
+            color: graphColours[2],
+            type: 'spline'
+        });
+
         vaccineData.data = _.sortBy(vaccineData.data, ['date']);
         let targetStartDate = new Date(vaccineData.data.filter(day => day.cumPeopleVaccinatedFirstDoseByPublishDate !== null)[0].date);
         let targetStartDoses = 0;

@@ -10,7 +10,7 @@ const fetcher = url => {
 
 function VaccinesToday() {
 
-    const totalDoses = useSWR("https://api.coronavirus.data.gov.uk/v1/data?filters=areaName=United%2520Kingdom;areaType=overview&latestBy=cumPeopleVaccinatedFirstDoseByPublishDate&structure=%7B%22date%22:%22date%22,%22cumPeopleVaccinatedFirstDoseByPublishDate%22:%22cumPeopleVaccinatedFirstDoseByPublishDate%22,%22cumPeopleVaccinatedSecondDoseByPublishDate%22:%22cumPeopleVaccinatedSecondDoseByPublishDate%22,%22newPeopleVaccinatedFirstDoseByPublishDate%22:%22newPeopleVaccinatedFirstDoseByPublishDate%22,%22newPeopleVaccinatedSecondDoseByPublishDate%22:%22newPeopleVaccinatedSecondDoseByPublishDate%22%7D", fetcher);
+    const totalDoses = useSWR("https://api.coronavirus.data.gov.uk/v1/data?filters=areaName=United%2520Kingdom;areaType=overview&latestBy=cumPeopleVaccinatedFirstDoseByPublishDate&structure=%7B%22date%22:%22date%22,%22cumPeopleVaccinatedFirstDoseByPublishDate%22:%22cumPeopleVaccinatedFirstDoseByPublishDate%22,%22cumPeopleVaccinatedSecondDoseByPublishDate%22:%22cumPeopleVaccinatedSecondDoseByPublishDate%22,%22cumPeopleVaccinatedThirdDoseByPublishDate%22:%22cumPeopleVaccinatedThirdInjectionByPublishDate%22,%22newPeopleVaccinatedFirstDoseByPublishDate%22:%22newPeopleVaccinatedFirstDoseByPublishDate%22,%22newPeopleVaccinatedSecondDoseByPublishDate%22:%22newPeopleVaccinatedSecondDoseByPublishDate%22,%22newPeopleVaccinatedThirdDoseByPublishDate%22:%22newPeopleVaccinatedThirdInjectionByPublishDate%22%7D", fetcher);
 
     const getDate = (dateString) => {
         return `${new Date(dateString).toLocaleDateString("en-GB", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}`;
@@ -59,7 +59,7 @@ function VaccinesToday() {
                             </span>
                         </span>
                     </li>
-                    <li className="text-white bg-cyan-900 bg-opacity-90 p-4 rounded-3xl shadow-lg text-center lg:text-left w-full md:w-auto">
+                    <li className="text-white bg-cyan-900 bg-opacity-90 p-4 rounded-3xl shadow-lg text-center lg:text-left mr-4 w-full md:w-auto mb-4 md:mb-0">
                         <span className="font-bold text-sm">Second Dose</span><br />
                         <span className="flex">
                             <span className="mr-2 bg-cyan-200 bg-opacity-20 rounded-2xl py-2 px-4 mt-2 flex flex-col w-1/2 items-center">
@@ -88,6 +88,41 @@ function VaccinesToday() {
                                 <span>
                                     {totalDoses && totalDoses.data 
                                         ? (<CountUpComponent number={((totalDoses.data.data[0].cumPeopleVaccinatedSecondDoseByPublishDate / TotalAdultPopulation()) * 100)} delay="2000" suffix="%" decimalPlaces={2} />)
+                                        : (<>0</>)
+                                    }
+                                </span>
+                            </span>
+                        </span>
+                    </li>
+                    <li className="text-white bg-cyan-900 bg-opacity-90 p-4 rounded-3xl shadow-lg text-center lg:text-left w-full md:w-auto">
+                        <span className="font-bold text-sm">Third Dose</span><br />
+                        <span className="flex">
+                            <span className="mr-2 bg-cyan-200 bg-opacity-20 rounded-2xl py-2 px-4 mt-2 flex flex-col w-1/2 items-center">
+                                <span className="text-xs">Today</span>
+                                <span className="text-2xl text-center" style={{width: '6ch'}}>
+                                    {totalDoses && totalDoses.data
+                                        ? (<CountUpComponent number={totalDoses.data.data[0].newPeopleVaccinatedThirdDoseByPublishDate} delay="0" />)
+                                        : (<>0</>)
+                                    }
+                                </span>
+                                <span>
+                                    {totalDoses && totalDoses.data 
+                                        ? (<CountUpComponent number={((totalDoses.data.data[0].newPeopleVaccinatedThirdDoseByPublishDate / TotalAdultPopulation()) * 100)} delay="2000" suffix="%" decimalPlaces={2} />)
+                                        : (<>0</>)
+                                    }
+                                </span>                                
+                            </span>
+                            <span className="ml-2 bg-cyan-200 bg-opacity-20 rounded-2xl py-2 px-4 mt-2 flex flex-col w-1/2 items-center">
+                                <span className="text-xs">Total</span>
+                                <span className="text-2xl text-center" style={{width: '8ch'}}>
+                                    {totalDoses && totalDoses.data
+                                        ? (<CountUpComponent number={totalDoses.data.data[0].cumPeopleVaccinatedThirdDoseByPublishDate} delay="0" />)
+                                        : (<>0</>)
+                                    }
+                                </span>
+                                <span>
+                                    {totalDoses && totalDoses.data 
+                                        ? (<CountUpComponent number={((totalDoses.data.data[0].cumPeopleVaccinatedThirdDoseByPublishDate / TotalAdultPopulation()) * 100)} delay="2000" suffix="%" decimalPlaces={2} />)
                                         : (<>0</>)
                                     }
                                 </span>
