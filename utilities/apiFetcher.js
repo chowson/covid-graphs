@@ -65,3 +65,7 @@ export const GetCasesByDemogrpahicsData = (areas) => {
 
     return urls.map(url => useSWR(url, mulitpleFetcher));
 }
+
+export const GetNationalCasesByDemogrpahicsData = () => {
+    return useSWR('https://api.coronavirus.data.gov.uk/v1/data?filters=areaType=nation;areaName=England&structure={"date":"date","newCasesBySpecimenDateAgeDemographics":"newCasesBySpecimenDateAgeDemographics"}');
+}

@@ -41,7 +41,7 @@ export default class Home extends React.Component {
 
           <DailyCases key={`dailyCases_${this.areaKey()}`} />
 
-          <div className="separator box-content" style={{ height: '400px' }}>
+          <div className="separator box-content">
               { this.state.loaded &&
                   <CasesByAgeDemographics />
               }

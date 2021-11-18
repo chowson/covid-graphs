@@ -1,10 +1,12 @@
 import { useRef } from "react";
 import useLocalStorage from "../hooks/useLocalStorage";
-import { GetCasesByDemogrpahicsData } from "../utilities/apiFetcher";
+import { GetCasesByDemogrpahicsData, GetNationalCasesByDemogrpahicsData } from "../utilities/apiFetcher";
 import graphColours from "../utilities/graphColours";
 import ColumnChart from './columnChart';
-import { GetDateSuffix } from '../utilities/time';
+import { GetDateSuffix, ToUtc } from '../utilities/time';
 import _ from "lodash";
+import StocksChart from "./stocksChart";
+import sevenDayAverage from "../utilities/sevenDayAverage";
 
 function CasesByAgeDemographics() {
     const [favouriteAreas] = useLocalStorage('favouriteAreas', []);
@@ -12,6 +14,7 @@ function CasesByAgeDemographics() {
     const max = useRef();
 
     const data = GetCasesByDemogrpahicsData(favouriteAreas);
+    const englandData = GetNationalCasesByDemogrpahicsData(favouriteAreas);
 
     const getSeries = (dailyCasesData) => {
         let series = [];
@@ -68,18 +71,78 @@ function CasesByAgeDemographics() {
         return dateStr;
     };
 
+    const getHistoricSeries = (datad) => {
+        var result = [];
+        var series_00_60 = [];
+        var series_60_plus = [];
+        
+        for(var x of datad.data.data) {
+            var under60s = x.newCasesBySpecimenDateAgeDemographics.filter(a => a.age === '00_59');
+            if(under60s[0]) {
+                series_00_60.push([ToUtc(new Date(x.date)), under60s[0].cases]);
+            }
+
+            var over60s = x.newCasesBySpecimenDateAgeDemographics.filter(a => a.age === '60+');
+            if(over60s[0]) {
+                series_60_plus.push([ToUtc(new Date(x.date)), over60s[0].cases]);
+            }
+        }
+        
+        result.push({
+            name: "0-60",
+            data: _.sortBy(series_00_60, [0]),
+            color: graphColours[0],
+            type: 'spline'
+        });
+
+        result.push({
+            name: "60+",
+            data: _.sortBy(series_60_plus, [0]),
+            color: graphColours[1],
+            type: 'spline'
+        });
+
+        result.push({
+            name: "0-60 7 Day Average",
+            data: sevenDayAverage(result[0].data),
+            color: graphColours[0],
+            type: 'spline',
+            dashStyle: 'ShortDot'
+        });
+
+        result.push({
+            name: "60+ 7 Day Average",
+            data: sevenDayAverage(result[1].data),
+            color: graphColours[1],
+            type: 'spline',
+            dashStyle: 'ShortDot'
+        })
+
+        return result;
+    }
+
     return (
         <>
-            
-            { (data && data.length > 0 && data[0].data) && 
-                <ColumnChart
-                    title={`${getDate(data)} - Case Numbers by Age`}
-                    dailySeries={getSeries(data)}
-                    categories={categories}
-                    max={max.current}
-                    valueSuffix=" cases"
-                    yAxisTitle="Cases" />
-            }
+            <div style={{ height: '400px' }}>
+                { (data && data.length > 0 && data[0].data) && 
+                    <ColumnChart
+                        title={`${getDate(data)} - Case Numbers by Age`}
+                        dailySeries={getSeries(data)}
+                        categories={categories}
+                        max={max.current}
+                        valueSuffix=" cases"
+                        yAxisTitle="Cases" />
+                }
+            </div>
+            <div>
+                { (englandData && englandData.data) && 
+                    <StocksChart
+                        title="Daily Cases by Demographic (England)"
+                        series={getHistoricSeries(englandData)}
+                        valueSuffix="cases"
+                    />
+                }
+            </div>
         </>
     );
 }
