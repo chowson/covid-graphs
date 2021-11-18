@@ -89,12 +89,23 @@ class CasesBySpecimenDate extends React.Component {
             <div>
                 <div className="separator h-stocks box-content">
                     { this.state.loaded &&
-                        <StocksChart title="Cases by Specimen Date (per 100,000)" series={this.state.averageSeries} valueSuffix="cases" />
+                        <StocksChart
+                            title="Cases by Specimen Date (per 100,000)"
+                            series={this.state.averageSeries}
+                            valueSuffix="cases"
+                            initialDaysMin={180}
+                        />
                     }
                 </div>
                 <div className="separator h-stocks box-content">
                     { this.state.loaded &&
-                        <StocksChart title="Cases by Specimen Date" series={this.state.series} valueSuffix="cases" />
+                        <StocksChart
+                            title="Cases by Specimen Date"
+                            series={this.state.series}
+                            valueSuffix="cases"
+                            initialDaysMin={180}
+                            
+                        />
                     }
                 </div>
                 

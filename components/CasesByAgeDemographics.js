@@ -73,37 +73,69 @@ function CasesByAgeDemographics() {
 
     const getHistoricSeries = (datad) => {
         var result = [];
-        var series_00_60 = [];
+        var series_00_20 = [];
+        var series_20_40 = [];
+        var series_40_60 = [];
         var series_60_plus = [];
         
         for(var x of datad.data.data) {
-            var under60s = x.newCasesBySpecimenDateAgeDemographics.filter(a => a.age === '00_59');
-            if(under60s[0]) {
-                series_00_60.push([ToUtc(new Date(x.date)), under60s[0].cases]);
+            var categories_00_20 = ['00_04', '05_9', '10_14', '15_19'];
+            var categories_20_40 = ['20_24', '25_29', '30_34', '35_39'];
+            var categories_40_60 = ['40_44', '45_49', '50_54', '55_59'];
+            var categories_60_plus = ['60+'];
+
+            var data_00_20 = x.newCasesBySpecimenDateAgeDemographics.filter(a => categories_00_20.includes(a.age));
+            var data_20_40 = x.newCasesBySpecimenDateAgeDemographics.filter(a => categories_20_40.includes(a.age));
+            var data_40_60 = x.newCasesBySpecimenDateAgeDemographics.filter(a => categories_40_60.includes(a.age));
+            var data_60_plus = x.newCasesBySpecimenDateAgeDemographics.filter(a => categories_60_plus.includes(a.age));
+
+            if(data_00_20[0]) {
+                series_00_20.push([ToUtc(new Date(x.date)), data_00_20.map(a => a.cases).reduce((total, num) => total + num)]);
             }
 
-            var over60s = x.newCasesBySpecimenDateAgeDemographics.filter(a => a.age === '60+');
-            if(over60s[0]) {
-                series_60_plus.push([ToUtc(new Date(x.date)), over60s[0].cases]);
+            if(data_20_40[0]) {
+                series_20_40.push([ToUtc(new Date(x.date)), data_20_40.map(a => a.cases).reduce((total, num) => total + num)]);
+            }
+
+            if(data_40_60[0]) {
+                series_40_60.push([ToUtc(new Date(x.date)), data_40_60.map(a => a.cases).reduce((total, num) => total + num)]);
+            }
+
+            if(data_60_plus[0]) {
+                series_60_plus.push([ToUtc(new Date(x.date)), data_60_plus.map(a => a.cases).reduce((total, num) => total + num)]);
             }
         }
         
         result.push({
-            name: "0-60",
-            data: _.sortBy(series_00_60, [0]),
+            name: "0-19",
+            data: _.sortBy(series_00_20, [0]),
             color: graphColours[0],
+            type: 'spline'
+        });
+
+        result.push({
+            name: "20-39",
+            data: _.sortBy(series_20_40, [0]),
+            color: graphColours[1],
+            type: 'spline'
+        });
+
+        result.push({
+            name: "40-59",
+            data: _.sortBy(series_40_60, [0]),
+            color: graphColours[2],
             type: 'spline'
         });
 
         result.push({
             name: "60+",
             data: _.sortBy(series_60_plus, [0]),
-            color: graphColours[1],
+            color: graphColours[3],
             type: 'spline'
         });
 
         result.push({
-            name: "0-60 7 Day Average",
+            name: "0-19 7 Day Average",
             data: sevenDayAverage(result[0].data),
             color: graphColours[0],
             type: 'spline',
@@ -111,9 +143,25 @@ function CasesByAgeDemographics() {
         });
 
         result.push({
-            name: "60+ 7 Day Average",
+            name: "20-39 7 Day Average",
             data: sevenDayAverage(result[1].data),
             color: graphColours[1],
+            type: 'spline',
+            dashStyle: 'ShortDot'
+        })
+
+        result.push({
+            name: "40-59 7 Day Average",
+            data: sevenDayAverage(result[2].data),
+            color: graphColours[2],
+            type: 'spline',
+            dashStyle: 'ShortDot'
+        });
+
+        result.push({
+            name: "60+ 7 Day Average",
+            data: sevenDayAverage(result[3].data),
+            color: graphColours[3],
             type: 'spline',
             dashStyle: 'ShortDot'
         })
