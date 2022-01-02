@@ -9,7 +9,7 @@ export function TotalPopulation() {
 }
 
 export function TotalAdultPopulation() {
-    return 53 * 1000000;
+    return 57.52 * 1000000;
 }
 
 export function SetFavouriteAreas(areas) {

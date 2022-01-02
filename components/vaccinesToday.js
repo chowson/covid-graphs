@@ -10,7 +10,7 @@ const fetcher = url => {
 
 function VaccinesToday() {
 
-    const totalDoses = useSWR("https://api.coronavirus.data.gov.uk/v1/data?filters=areaName=United%2520Kingdom;areaType=overview&latestBy=cumPeopleVaccinatedFirstDoseByPublishDate&structure=%7B%22date%22:%22date%22,%22cumPeopleVaccinatedFirstDoseByPublishDate%22:%22cumPeopleVaccinatedFirstDoseByPublishDate%22,%22cumPeopleVaccinatedSecondDoseByPublishDate%22:%22cumPeopleVaccinatedSecondDoseByPublishDate%22,%22cumPeopleVaccinatedThirdDoseByPublishDate%22:%22cumPeopleVaccinatedThirdInjectionByPublishDate%22,%22newPeopleVaccinatedFirstDoseByPublishDate%22:%22newPeopleVaccinatedFirstDoseByPublishDate%22,%22newPeopleVaccinatedSecondDoseByPublishDate%22:%22newPeopleVaccinatedSecondDoseByPublishDate%22,%22newPeopleVaccinatedThirdDoseByPublishDate%22:%22newPeopleVaccinatedThirdInjectionByPublishDate%22%7D", fetcher);
+    const totalDoses = useSWR('https://api.coronavirus.data.gov.uk/v1/data?filters=areaName=United%20Kingdom;areaType=overview&latestBy=cumPeopleVaccinatedFirstDoseByPublishDate&structure={"date":"date","cumPeopleVaccinatedFirstDoseByPublishDate":"cumPeopleVaccinatedFirstDoseByPublishDate","cumPeopleVaccinatedSecondDoseByPublishDate":"cumPeopleVaccinatedSecondDoseByPublishDate","cumPeopleVaccinatedThirdDoseByPublishDate":"cumPeopleVaccinatedThirdInjectionByPublishDate","newPeopleVaccinatedFirstDoseByPublishDate":"newPeopleVaccinatedFirstDoseByPublishDate","newPeopleVaccinatedSecondDoseByPublishDate":"newPeopleVaccinatedSecondDoseByPublishDate","newPeopleVaccinatedThirdDoseByPublishDate":"newPeopleVaccinatedThirdInjectionByPublishDate","cumVaccinationFirstDoseUptakeByPublishDatePercentage":"cumVaccinationFirstDoseUptakeByPublishDatePercentage","cumVaccinationSecondDoseUptakeByPublishDatePercentage":"cumVaccinationSecondDoseUptakeByPublishDatePercentage","cumVaccinationThirdInjectionUptakeByPublishDatePercentage":"cumVaccinationThirdInjectionUptakeByPublishDatePercentage"}', fetcher);
 
     const getDate = (dateString) => {
         return `${new Date(dateString).toLocaleDateString("en-GB", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}`;
@@ -52,7 +52,7 @@ function VaccinesToday() {
                                 </span>
                                 <span>
                                     {totalDoses && totalDoses.data 
-                                        ? (<CountUpComponent number={((totalDoses.data.data[0].cumPeopleVaccinatedFirstDoseByPublishDate / TotalAdultPopulation()) * 100)} delay="2000" suffix="%" decimalPlaces={2} />)
+                                        ? (<CountUpComponent number={totalDoses.data.data[0].cumVaccinationFirstDoseUptakeByPublishDatePercentage} delay="2000" suffix="%" decimalPlaces={2} />)
                                         : (<>0</>)
                                     }
                                 </span>
@@ -87,7 +87,7 @@ function VaccinesToday() {
                                 </span>
                                 <span>
                                     {totalDoses && totalDoses.data 
-                                        ? (<CountUpComponent number={((totalDoses.data.data[0].cumPeopleVaccinatedSecondDoseByPublishDate / TotalAdultPopulation()) * 100)} delay="2000" suffix="%" decimalPlaces={2} />)
+                                        ? (<CountUpComponent number={totalDoses.data.data[0].cumVaccinationSecondDoseUptakeByPublishDatePercentage} delay="2000" suffix="%" decimalPlaces={2} />)
                                         : (<>0</>)
                                     }
                                 </span>
@@ -122,7 +122,7 @@ function VaccinesToday() {
                                 </span>
                                 <span>
                                     {totalDoses && totalDoses.data 
-                                        ? (<CountUpComponent number={((totalDoses.data.data[0].cumPeopleVaccinatedThirdDoseByPublishDate / TotalAdultPopulation()) * 100)} delay="2000" suffix="%" decimalPlaces={2} />)
+                                        ? (<CountUpComponent number={totalDoses.data.data[0].cumVaccinationThirdInjectionUptakeByPublishDatePercentage} delay="2000" suffix="%" decimalPlaces={2} />)
                                         : (<>0</>)
                                     }
                                 </span>
