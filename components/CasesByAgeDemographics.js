@@ -14,7 +14,7 @@ function CasesByAgeDemographics() {
     const max = useRef();
 
     const data = GetCasesByDemogrpahicsData(favouriteAreas);
-    const englandData = GetNationalCasesByDemogrpahicsData(favouriteAreas);
+    const englandData = GetNationalCasesByDemogrpahicsData();
 
     const getSeries = (dailyCasesData) => {
         let series = [];
@@ -188,6 +188,8 @@ function CasesByAgeDemographics() {
                         title="Daily Cases by Demographic (England)"
                         series={getHistoricSeries(englandData)}
                         valueSuffix="cases"
+                        initialDaysMax={45}
+                        initialDaysMin={45}
                     />
                 }
             </div>
