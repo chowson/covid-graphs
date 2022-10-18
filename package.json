@@ -9,7 +9,8 @@
     "start": "next start"
   },
   "engines": {
-    "yarn": ">=1.17"
+    "yarn": ">=1.17",
+    "node": ">=16"
   },
   "dependencies": {
     "autoprefixer": "^10.4.1",
